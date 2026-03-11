@@ -7,6 +7,7 @@ import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
 import CharacterShowcase from "@/components/CharacterShowcase";
 import FeaturesGrid from "@/components/FeaturesGrid";
+import AboutSection from "@/components/AboutSection";
 import StatsSection from "@/components/StatsSection";
 import PurchaseSection from "@/components/PurchaseSection";
 import GameFooter from "@/components/GameFooter";
@@ -53,6 +54,7 @@ const Index = () => {
         <>
           <Navigation />
           <HeroSection />
+          <AboutSection />
           <CharacterShowcase />
           <FeaturesGrid />
           <StatsSection />

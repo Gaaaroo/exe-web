@@ -86,6 +86,7 @@ const Navigation = () => {
 
   const navLinks = [
     { label: "Tổng Quan", href: "#hero" },
+    { label: "About Us", href: "#about" },
     { label: "Nhân Vật", href: "#character" },
     { label: "Tính Năng", href: "#features" },
     { label: "Mua Game", href: "#purchase" },
@@ -98,7 +99,7 @@ const Navigation = () => {
       transition={{ delay: 2.5, duration: 0.8, ease: "easeOut" }}
       className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-500 ${
         scrolled
-          ? "bg-abyss border-b border-border"
+          ? "bg-abyss shadow-lg shadow-black/40"
           : "bg-transparent"
       }`}
     >

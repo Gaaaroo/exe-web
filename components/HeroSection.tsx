@@ -23,7 +23,7 @@ const HeroSection = () => {
     return () => el?.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
-  const titleChars = "HUYỀN SỬ VIỆT".split("");
+  const titleChars = "KÝ ỨC DI SẢN".split("");
 
   return (
     <section
@@ -81,7 +81,7 @@ const HeroSection = () => {
           transition={{ delay: 2.8, duration: 1 }}
           className="font-body text-sm tracking-[0.3em] text-gold/70 mb-6 uppercase"
         >
-          Khám phá huyền thoại ngàn năm
+          Game 3D về ký ức di sản
         </motion.p>
 
         <h1 className="font-heading text-6xl md:text-8xl lg:text-9xl tracking-wider text-gold-glow mb-8">
@@ -107,9 +107,10 @@ const HeroSection = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 4.2, duration: 1 }}
-          className="font-body text-parchment/60 text-lg md:text-xl max-w-xl mx-auto mb-12 font-light"
+          className="font-body text-parchment/70 text-lg md:text-xl max-w-xl mx-auto mb-12 font-light"
         >
-          Một cuộc hành trình xuyên thời gian, nơi lịch sử và thần thoại hòa quyện
+          Một tựa game 3D nơi bạn du hành qua các làng nghề Việt Nam, trực tiếp làm nghề,
+          khám phá ký ức tổ tiên và đối mặt với kinh dị dân gian trong chu kỳ Ngày – Đêm.
         </motion.p>
 
         <motion.div

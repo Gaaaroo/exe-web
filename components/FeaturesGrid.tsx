@@ -4,21 +4,21 @@ import { Landmark, Gamepad2, Music } from "lucide-react";
 const features = [
   {
     icon: Landmark,
-    title: "Văn Hóa Nghìn Năm",
+    title: "Làng Nghề Thật",
     description:
-      "Tái hiện chân thực hàng nghìn năm lịch sử với hơn 50 di tích được mô phỏng từ các công trình thực tế của Việt Nam.",
+      "Khám phá các làng nghề tranh kính, nón lá, làm nhang… được xây dựng dựa trên khảo sát thực địa và tư liệu chuyên gia.",
   },
   {
     icon: Gamepad2,
-    title: "Lối Chơi Đột Phá",
+    title: "Làm Nghề & Kinh Dị Dân Gian",
     description:
-      "Hệ thống chiến đấu đậm chất võ thuật cổ truyền, kết hợp phép thuật dựa trên Ngũ Hành và truyền thuyết dân gian.",
+      "Hệ thống mini-game mô phỏng quy trình làm nghề ban ngày, kết hợp giải đố và kinh dị dân gian ban đêm để mở khóa ký ức bị lãng quên.",
   },
   {
     icon: Music,
-    title: "Âm Nhạc Dân Tộc",
+    title: "Nhãn Giới Ký Ức",
     description:
-      "Nhạc nền được sáng tác bởi nghệ sĩ hàng đầu, sử dụng nhạc cụ truyền thống: đàn bầu, đàn tranh, sáo trúc.",
+      "Kích hoạt Nhãn giới ký ức để nhìn thấy ngôi làng trong thời kỳ rực rỡ nhất, tìm nguyên liệu hiếm và bản vẽ bí mật cho nghề thủ công.",
   },
 ] as const;
 

@@ -2,7 +2,7 @@
 
 import { Suspense, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { OrbitControls, Environment } from "@react-three/drei";
+import { OrbitControls } from "@react-three/drei";
 import { motion } from "framer-motion";
 import * as THREE from "three";
 
@@ -118,6 +118,7 @@ const CharacterShowcase = () => {
       <div className="relative w-full lg:w-3/5 h-[60vh] lg:h-screen">
         <Suspense fallback={<Loader />}>
           <Canvas camera={{ position: [0, 0.5, 4], fov: 45 }}>
+            <color attach="background" args={["#0A0A0A"]} />
             <ambientLight intensity={0.3} />
             <pointLight position={[5, 5, 5]} intensity={0.8} color="#B9975B" />
             <pointLight position={[-3, 2, -3]} intensity={0.4} color="#8B0000" />
@@ -137,7 +138,7 @@ const CharacterShowcase = () => {
               autoRotate
               autoRotateSpeed={0.5}
             />
-            <Environment preset="night" />
+
             <fog attach="fog" args={["#0A0A0A", 5, 15]} />
           </Canvas>
         </Suspense>
@@ -155,10 +156,10 @@ const CharacterShowcase = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <p className="font-body text-xs tracking-[0.3em] text-gold/60 uppercase mb-4">
-            Nhân vật chính
+            Người giữ ký ức
           </p>
           <h2 className="font-heading text-4xl md:text-5xl text-parchment mb-2">
-            Lạc Tướng
+            Người Hậu Duệ
           </h2>
           <div className="w-16 h-px bg-gradient-to-r from-gold to-transparent mb-6" />
 
@@ -167,11 +168,11 @@ const CharacterShowcase = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.3 }}
             transition={{ delay: 0.2, duration: 0.8 }}
-            className="font-body text-parchment/60 leading-relaxed mb-6 font-light"
+            className="font-body text-parchment/70 leading-relaxed mb-6 font-light"
           >
-            Vị tướng huyền thoại của Âu Lạc, người mang trong mình dòng máu của Rồng Tiên. Được
-            rèn luyện từ thuở thiếu thời bởi các bậc hiền triết trên đỉnh Ba Vì, Lạc Tướng sở hữu
-            sức mạnh phi thường và trí tuệ siêu phàm.
+            Bạn vào vai một người trẻ trở về làng nghề tổ tiên sau nhiều năm xa cách. Giữa nhịp sống
+            hiện đại, ký ức về những bàn tay làm nghề và mùi hương xưởng cũ chỉ còn lại trong những
+            mảnh chuyện được kể lại.
           </motion.p>
 
           <motion.p
@@ -179,11 +180,11 @@ const CharacterShowcase = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.3 }}
             transition={{ delay: 0.4, duration: 0.8 }}
-            className="font-body text-parchment/40 leading-relaxed mb-8 font-light text-sm"
+            className="font-body text-parchment/50 leading-relaxed mb-8 font-light text-sm"
           >
-            Với thanh kiếm thần Thuận Thiên và tấm khiên Đông Sơn cổ xưa, Lạc Tướng bước vào cuộc
-            chiến bảo vệ non sông, đối đầu với những thế lực hắc ám đe dọa xóa sổ nền văn minh
-            Việt cổ.
+            Thông qua cơ chế Nhãn giới ký ức, bạn nhìn thấy ngôi làng trong thời kỳ rực rỡ nhất,
+            đối thoại với những bóng hình đã khuất và ghép lại câu chuyện bị bỏ quên giữa ranh giới
+            đời thường ban ngày và folk horror dân gian mỗi khi đêm xuống.
           </motion.p>
 
           <motion.div

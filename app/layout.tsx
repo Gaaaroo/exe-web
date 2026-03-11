@@ -15,8 +15,8 @@ const bodyFont = Be_Vietnam_Pro({
 });
 
 export const metadata: Metadata = {
-  title: "Huyền Sử Việt",
-  description: "Trang giới thiệu game Huyền Sử Việt",
+  title: "Ký Ức Di Sản",
+  description: "Trang giới thiệu dự án game 3D Ký Ức Di Sản của nhóm 3X3 Challenge",
 };
 
 export default function RootLayout({

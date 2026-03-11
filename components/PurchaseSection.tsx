@@ -8,33 +8,32 @@ import { Button } from "@/components/ui/button";
 
 const editions = [
   {
-    name: "Standard Edition",
-    price: "799.000₫",
-    amount: 799000,
+    name: "Traveler Pass",
+    price: "Miễn phí",
+    amount: 0,
     edition: "standard",
     icon: Shield,
     features: [
-      "Game đầy đủ",
-      "Bản đồ thế giới mở",
-      "Cập nhật miễn phí",
-      "Nhạc nền gốc (Digital)",
+      "Trải nghiệm map làng nghề đầu tiên",
+      "Hệ thống làm nghề cơ bản",
+      "Memory Vision phiên bản chuẩn",
+      "Free-to-play, không bắt buộc nạp",
     ],
-    cta: "MUA NGAY",
+    cta: "CHƠI THỬ",
     featured: false,
   },
   {
-    name: "Collector's Edition",
-    price: "1.499.000₫",
-    amount: 1499000,
+    name: "Heritage Edition",
+    price: "Dự kiến 50.000–99.000₫",
+    amount: 99000,
     edition: "collector",
     icon: Crown,
     features: [
-      "Tất cả Standard Edition",
-      "Art Book kỹ thuật số",
-      "3 DLC mở rộng",
-      "Trang phục Hoàng Đế",
-      "Nhạc nền Vinyl",
-      "Truy cập sớm 7 ngày",
+      "Toàn bộ nội dung Traveler Pass",
+      "Trang phục và nội thất cổ truyền độc quyền",
+      "Mở khóa các map làng nghề tiếp theo qua DLC",
+      "Ưu tiên tham gia thử nghiệm nội dung mới",
+      "Ủng hộ dự án phát triển dài hạn",
     ],
     cta: "ĐẶT TRƯỚC",
     featured: true,
@@ -92,7 +91,7 @@ const PurchaseSection = () => {
           className="text-center mb-16"
         >
           <p className="font-body text-xs tracking-[0.3em] text-gold/60 uppercase mb-4">
-            Sở hữu ngay
+            Trải nghiệm & đồng hành
           </p>
           <h2 className="font-heading text-4xl md:text-5xl text-parchment">
             Chọn Phiên Bản
@@ -158,9 +157,9 @@ const PurchaseSection = () => {
           className="flex items-center justify-center gap-2 mt-12"
         >
           <Shield className="w-4 h-4 text-gold/40" />
-          <span className="font-body text-xs text-parchment/30 tracking-wider">
-            Thanh toán bảo mật qua PayOS / VietQR
-          </span>
+            <span className="font-body text-xs text-parchment/30 tracking-wider">
+              Mô hình giá dự kiến, có thể điều chỉnh dựa trên góp ý cộng đồng.
+            </span>
         </motion.div>
       </div>
     </section>

@@ -18,7 +18,7 @@ const GameFooter = () => {
           transition={{ duration: 0.8 }}
         >
           <p className="font-heading text-2xl text-gold tracking-widest mb-8">
-            HUYỀN SỬ VIỆT
+            KÝ ỨC DI SẢN
           </p>
 
           <div className="flex items-center justify-center gap-8 mb-12">
