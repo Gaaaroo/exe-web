@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 export default function LoginPage() {
   const searchParams = useSearchParams();
   const next = searchParams.get("next") ?? "/";
+  const section = searchParams.get("section");
   const error = searchParams.get("error");
   const [loading, setLoading] = useState(false);
 
@@ -17,7 +18,11 @@ export default function LoginPage() {
     setLoading(true);
     try {
       const origin = window.location.origin;
-      const redirectTo = `${origin}/auth/callback?next=${encodeURIComponent(next)}`;
+      const redirectTo = `${origin}/auth/callback?next=${encodeURIComponent(
+        next
+      )}${
+        section ? `&section=${encodeURIComponent(section)}` : ""
+      }`;
       // Debug: xem URL callback app sẽ dùng (mở F12 → Console)
       console.log("[Login DEBUG] redirectTo (Supabase sẽ redirect về đây sau khi chọn Google):", redirectTo);
       const { error: err } = await supabase.auth.signInWithOAuth({

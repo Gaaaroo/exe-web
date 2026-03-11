@@ -13,6 +13,7 @@ export default function AuthCallbackPage() {
   useEffect(() => {
     const run = async () => {
       const next = searchParams.get("next") ?? "/";
+      const section = searchParams.get("section");
 
       // Supabase JS đã tự xử lý code trong URL (detectSessionInUrl: true mặc định)
       // nên ở thời điểm này, nếu user đã đăng nhập được thì getSession() sẽ có user.
@@ -32,9 +33,10 @@ export default function AuthCallbackPage() {
         return;
       }
 
-      // Đã có session → coi như đăng nhập thành công, redirect về next
+      // Đã có session → coi như đăng nhập thành công, redirect về next (+ hash section nếu có)
       setStatus("ok");
-      router.replace(next);
+      const target = section ? `${next}#${section}` : next;
+      router.replace(target);
     };
     run();
   }, [searchParams, router]);

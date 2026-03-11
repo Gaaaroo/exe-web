@@ -51,8 +51,11 @@ const PurchaseSection = () => {
         data: { session },
       } = await supabase.auth.getSession();
       if (!session) {
-        const next = `${window.location.pathname}#purchase`;
-        window.location.href = `/login?next=${encodeURIComponent(next)}`;
+        const next = window.location.pathname || "/";
+        const section = "purchase";
+        window.location.href = `/login?next=${encodeURIComponent(
+          next
+        )}&section=${encodeURIComponent(section)}`;
         setLoading(null);
         return;
       }
@@ -109,7 +112,7 @@ const PurchaseSection = () => {
               }`}
             >
               {edition.featured && (
-                <div className="absolute -top-px left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold to-transparent" />
+                <div className="absolute -top-px left-0 right-0 h-px bg-linear-to-r from-transparent via-gold to-transparent" />
               )}
 
               <div className="flex items-center gap-3 mb-6">
@@ -124,7 +127,7 @@ const PurchaseSection = () => {
               <ul className="space-y-3 mb-8">
                 {edition.features.map((f) => (
                   <li key={f} className="flex items-start gap-3">
-                    <Check className="w-4 h-4 text-gold/60 mt-0.5 flex-shrink-0" />
+                    <Check className="w-4 h-4 text-gold/60 mt-0.5 shrink-0" />
                     <span className="font-body text-sm text-parchment/60 font-light">{f}</span>
                   </li>
                 ))}

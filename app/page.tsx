@@ -24,6 +24,28 @@ const Index = () => {
     }
   }, [searchParams]);
 
+  useEffect(() => {
+    if (!introComplete) return;
+
+    const scrollToHash = () => {
+      if (typeof window === "undefined") return;
+      const hash = window.location.hash;
+      if (!hash) return;
+      const id = hash.replace(/^#/, "");
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    };
+
+    // Khi intro vừa xong, nếu URL đã có #purchase thì kéo xuống
+    scrollToHash();
+
+    // Và nếu hash đổi (vd: click link # khác) thì cũng kéo
+    window.addEventListener("hashchange", scrollToHash);
+    return () => window.removeEventListener("hashchange", scrollToHash);
+  }, [introComplete]);
+
   return (
     <div className="min-h-screen bg-background">
       <SignatureMoment onComplete={() => setIntroComplete(true)} />
