@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import SignatureMoment from "@/components/SignatureMoment";
-import { NavLink } from "@/components/NavLink";
+import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
 import CharacterShowcase from "@/components/CharacterShowcase";
 import FeaturesGrid from "@/components/FeaturesGrid";
@@ -18,7 +18,7 @@ const Index = () => {
       <SignatureMoment onComplete={() => setIntroComplete(true)} />
       {introComplete && (
         <>
-          <NavLink href="/" />
+          <Navigation />
           <HeroSection />
           <CharacterShowcase />
           <FeaturesGrid />

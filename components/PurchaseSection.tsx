@@ -51,7 +51,8 @@ const PurchaseSection = () => {
         data: { session },
       } = await supabase.auth.getSession();
       if (!session) {
-        alert("Vui lòng đăng nhập để mua game.");
+        const next = `${window.location.pathname}#purchase`;
+        window.location.href = `/login?next=${encodeURIComponent(next)}`;
         setLoading(null);
         return;
       }
