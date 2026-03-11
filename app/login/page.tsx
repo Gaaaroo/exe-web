@@ -18,6 +18,8 @@ export default function LoginPage() {
     try {
       const origin = window.location.origin;
       const redirectTo = `${origin}/auth/callback?next=${encodeURIComponent(next)}`;
+      // Debug: xem URL callback app sẽ dùng (mở F12 → Console)
+      console.log("[Login DEBUG] redirectTo (Supabase sẽ redirect về đây sau khi chọn Google):", redirectTo);
       const { error: err } = await supabase.auth.signInWithOAuth({
         provider: "google",
         options: { redirectTo },
@@ -52,6 +54,12 @@ export default function LoginPage() {
           </p>
         )}
 
+        {error === "state" && (
+          <p className="font-body text-sm text-destructive mb-4 text-center">
+            Phiên đăng nhập hết hạn hoặc thiếu cấu hình. Vào Supabase Dashboard → Authentication → URL Configuration, thêm vào <strong>Redirect URLs</strong>: <code className="text-xs break-all block mt-2">http://localhost:3000/auth/callback</code> (khi chạy dev) rồi Save và thử lại.
+          </p>
+        )}
+
         <Button
           type="button"
           onClick={handleGoogleSignIn}
@@ -62,8 +70,8 @@ export default function LoginPage() {
         </Button>
 
         <p className="font-body text-xs text-parchment/40 mt-6 text-center">
-          Bấm &quot;Tiếp tục với Google&quot; sẽ mở cửa sổ đăng nhập Google. Nếu chưa có tài khoản,
-          bạn có thể tạo mới ngay trong bước đó.
+          Bấm &quot;Tiếp tục với Google&quot; sẽ mở cửa sổ đăng nhập Google. Nếu
+          chưa có tài khoản, bạn có thể tạo mới ngay trong bước đó.
         </p>
 
         <div className="mt-8 pt-6 border-t border-border text-center">

@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import SignatureMoment from "@/components/SignatureMoment";
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
@@ -12,6 +13,16 @@ import GameFooter from "@/components/GameFooter";
 
 const Index = () => {
   const [introComplete, setIntroComplete] = useState(false);
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    const errorCode = searchParams.get("error_code");
+    const error = searchParams.get("error");
+    if (errorCode === "bad_oauth_state" || error === "invalid_request") {
+      const next = searchParams.get("next") ?? "/#purchase";
+      window.location.replace(`/login?error=state&next=${encodeURIComponent(next)}`);
+    }
+  }, [searchParams]);
 
   return (
     <div className="min-h-screen bg-background">
