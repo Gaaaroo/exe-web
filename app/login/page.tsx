@@ -1,7 +1,6 @@
 "use client";
 
-import { useState } from "react";
-import { useSearchParams } from "next/navigation";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Home } from "lucide-react";
@@ -26,13 +25,18 @@ function GoogleIcon({ className }: { className?: string }) {
 }
 
 export default function LoginPage() {
-  const searchParams = useSearchParams();
-  const next = searchParams.get("next") ?? "/";
-  const section = searchParams.get("section");
-  const error = searchParams.get("error");
+  const [next, setNext] = useState("/");
+  const [section, setSection] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
-  // Quay về đúng section (vd. /#purchase) khi có section
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    setNext(params.get("next") ?? "/");
+    setSection(params.get("section"));
+    setError(params.get("error"));
+  }, []);
+
   const backHref = section ? `${next.replace(/#.*$/, "")}#${section}` : next;
 
   const handleGoogleSignIn = async () => {
