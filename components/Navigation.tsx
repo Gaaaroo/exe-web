@@ -176,13 +176,13 @@ const Navigation = () => {
           ) : showCta ? (
             <motion.a
               key="cta"
-              href="#purchase"
+              href={`/login?next=${encodeURIComponent("/")}&section=purchase`}
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
               className="shrink-0 heat-haze px-2 py-1 sm:px-3 sm:py-1.5 md:px-5 md:py-2 border border-gold/50 text-gold text-[10px] sm:text-xs md:text-sm font-body tracking-wider hover:border-gold transition-all duration-300 whitespace-nowrap"
             >
-              ĐẶT TRƯỚC
+              ĐĂNG NHẬP
             </motion.a>
           ) : null}
         </AnimatePresence>

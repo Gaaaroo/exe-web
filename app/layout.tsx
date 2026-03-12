@@ -15,8 +15,8 @@ const bodyFont = Be_Vietnam_Pro({
 });
 
 export const metadata: Metadata = {
-  title: "Huyền Sử Việt",
-  description: "Trang giới thiệu game Huyền Sử Việt",
+  title: "Game",
+  description: "Trang giới thiệu game – chuyến phiêu lưu đi tìm lại những làng nghề và nét văn hóa đang dần lùi vào quên lãng.",
 };
 
 export default function RootLayout({

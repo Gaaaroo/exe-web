@@ -13,7 +13,35 @@ import GameFooter from "@/components/GameFooter";
 
 const Index = () => {
   const [introComplete, setIntroComplete] = useState(false);
+  const [canScroll, setCanScroll] = useState(false);
   const searchParams = useSearchParams();
+
+  useEffect(() => {
+    if (!introComplete) return;
+    // Nếu user quay về với hash (vd. /#purchase sau khi đăng nhập) thì cho scroll ngay, không cần đợi hero
+    if (typeof window !== "undefined" && window.location.hash) {
+      setCanScroll(true);
+      return;
+    }
+    const preventScroll = (e: Event) => {
+      if (!canScroll) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    };
+    if (!canScroll) {
+      document.body.style.overflow = "hidden";
+      document.body.style.touchAction = "none";
+      window.addEventListener("wheel", preventScroll, { passive: false });
+      window.addEventListener("touchmove", preventScroll, { passive: false });
+    }
+    return () => {
+      document.body.style.overflow = "";
+      document.body.style.touchAction = "";
+      window.removeEventListener("wheel", preventScroll);
+      window.removeEventListener("touchmove", preventScroll);
+    };
+  }, [introComplete, canScroll]);
 
   useEffect(() => {
     const errorCode = searchParams.get("error_code");
@@ -52,7 +80,7 @@ const Index = () => {
       {introComplete && (
         <>
           <Navigation />
-          <HeroSection />
+          <HeroSection onReady={() => setCanScroll(true)} />
           <CharacterShowcase />
           <FeaturesGrid />
           <StatsSection />
