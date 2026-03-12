@@ -85,6 +85,7 @@ const Navigation = () => {
 
   const navLinks = [
     { label: "Tổng Quan", href: "#hero" },
+    { label: "Về Dự Án", href: "#about" },
     { label: "Nhân Vật", href: "#character" },
     { label: "Tính Năng", href: "#features" },
     { label: "Mua Game", href: "#purchase" },

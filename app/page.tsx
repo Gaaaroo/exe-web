@@ -5,6 +5,7 @@ import { useSearchParams } from "next/navigation";
 import SignatureMoment from "@/components/SignatureMoment";
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
+import AboutSection from "@/components/AboutSection";
 import CharacterShowcase from "@/components/CharacterShowcase";
 import FeaturesGrid from "@/components/FeaturesGrid";
 import StatsSection from "@/components/StatsSection";
@@ -82,6 +83,7 @@ const Index = () => {
         <>
           <Navigation />
           <HeroSection onReady={() => setCanScroll(true)} />
+          <AboutSection />
           <CharacterShowcase />
           <FeaturesGrid />
           <StatsSection />
