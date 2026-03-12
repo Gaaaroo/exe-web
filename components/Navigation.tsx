@@ -105,7 +105,7 @@ const Navigation = () => {
           href="#hero"
           className="font-heading text-xs sm:text-sm md:text-base lg:text-xl xl:text-2xl 2xl:text-3xl tracking-[0.2em] sm:tracking-[0.3em] lg:tracking-[0.35em] text-gold uppercase whitespace-nowrap shrink min-w-0"
         >
-          GAME
+          KÝ ỨC DI SẢN
         </a>
 
         <div className="flex items-center shrink-0 gap-1 sm:gap-2 md:gap-4 lg:gap-6 xl:gap-8">

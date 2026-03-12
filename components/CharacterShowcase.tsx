@@ -156,10 +156,10 @@ const CharacterShowcase = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <p className="font-body text-xs tracking-[0.3em] text-gold/60 uppercase mb-4">
-            Người dẫn lối
+            Nhân vật chính
           </p>
           <h2 className="font-heading text-4xl md:text-5xl text-parchment mb-2">
-            Người Thắp Đèn
+            Người Kế Thừa Ký Ức
           </h2>
           <div className="w-16 h-px bg-linear-to-r from-gold to-transparent mb-6" />
 
@@ -170,9 +170,10 @@ const CharacterShowcase = () => {
             transition={{ delay: 0.2, duration: 0.8 }}
             className="font-body text-parchment/60 leading-relaxed mb-6 font-light"
           >
-            Một nghệ nhân trẻ mang theo chiếc đèn lồng đầu tiên của gia đình, lên đường đi qua
-            những ngôi làng đang dần tắt lửa nghề. Mỗi nơi bạn ghé qua là một cơ hội để học lại
-            cách cắt giấy, ghép kính, pha men, dệt vải.
+            Bạn vào vai một người trẻ yêu văn hóa, bắt đầu hành trình du hành qua các vùng miền
+            để tìm lại những giá trị đang dần lùi xa vào dĩ vãng. Trên con đường ấy, bạn khám phá
+            và hồi sinh các làng nghề truyền thống như tranh kiếng Nam Bộ, lồng đèn thủ công hay
+            nón lá.
           </motion.p>
 
           <motion.p
@@ -182,9 +183,10 @@ const CharacterShowcase = () => {
             transition={{ delay: 0.4, duration: 0.8 }}
             className="font-body text-parchment/40 leading-relaxed mb-8 font-light text-sm"
           >
-            Mục tiêu của bạn không phải đánh bại quái vật, mà là thuyết phục người dân cùng thắp
-            lại ánh sáng trong xưởng, dựng lại những hoa văn đã mờ và kể tiếp câu chuyện của từng
-            làng nghề trước khi chúng biến mất.
+            Với sức mạnh đặc biệt mang tên “Nhãn giới ký ức”, bạn nhìn xuyên qua lớp bụi thời gian,
+            chạm vào từng công đoạn chế tác tỉ mỉ và đánh thức những ký ức rực rỡ đang ngủ yên
+            trong lòng di sản. Sức Mạnh, Trí Tuệ và Tốc Độ của bạn sẽ cùng nhau quyết định tương lai
+            của những làng nghề ấy.
           </motion.p>
 
           <motion.div

@@ -1,24 +1,30 @@
 import { motion } from "framer-motion";
-import { Landmark, Gamepad2, Music } from "lucide-react";
+import { Landmark, Gamepad2, Music, Eye } from "lucide-react";
 
 const features = [
   {
     icon: Landmark,
-    title: "Game name",
+    title: "Thế Giới Mở Đậm Chất Việt",
     description:
-      "Bước qua những con ngõ nhỏ, ghé thăm các làng làm lồng đèn, tranh kính, gốm, mây tre… được lấy cảm hứng từ những không gian thật.",
+      "Bước qua những con ngõ nhỏ để ghé thăm các làng nghề làm lồng đèn, tranh kiếng, gốm, mây tre… được lấy cảm hứng hoàn toàn từ những không gian di sản có thật ngoài đời.",
   },
   {
     icon: Gamepad2,
     title: "Thủ Công Tương Tác",
     description:
-      "Chuỗi minigame nơi bạn tự tay cắt giấy, ghép kính, pha màu, thắp nến… mỗi thao tác đều ảnh hưởng tới tác phẩm cuối cùng.",
+      "Chuỗi game mô phỏng nơi bạn trực tiếp “nhúng tay” vào từng công đoạn: cắt giấy, ghép kính, pha màu, thắp nến… Mỗi thao tác đều ảnh hưởng trực tiếp đến độ tinh xảo của tác phẩm.",
   },
   {
     icon: Music,
     title: "Không Gian Lễ Hội",
     description:
       "Nhạc nền và âm thanh môi trường tái hiện tiếng chợ, tiếng lò gốm, tiếng kéo cưa… cho cảm giác đang thật sự bước vào một lễ hội văn hóa.",
+  },
+  {
+    icon: Eye,
+    title: "Nhãn Giới Ký Ức",
+    description:
+      "Kích hoạt khả năng nhìn thấu lớp bụi thời gian để khám phá các điển tích ẩn giấu, đánh thức ký ức rực rỡ và kết nối giữa kiến thức di sản chính xác với trải nghiệm giải trí lôi cuốn.",
   },
 ] as const;
 
@@ -64,7 +70,7 @@ const FeaturesGrid = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: false, amount: 0.2 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto"
         >
           {features.map((feature) => (
             <motion.div
