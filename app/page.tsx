@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useSearchParams } from "next/navigation";
 import SignatureMoment from "@/components/SignatureMoment";
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
@@ -16,11 +15,9 @@ import BackToTop from "@/components/BackToTop";
 const Index = () => {
   const [introComplete, setIntroComplete] = useState(false);
   const [canScroll, setCanScroll] = useState(false);
-  const searchParams = useSearchParams();
 
   useEffect(() => {
     if (!introComplete) return;
-    // Nếu user quay về với hash (vd. /#purchase sau khi đăng nhập) thì cho scroll ngay, không cần đợi hero
     if (typeof window !== "undefined" && window.location.hash) {
       setCanScroll(true);
       return;
@@ -46,13 +43,14 @@ const Index = () => {
   }, [introComplete, canScroll]);
 
   useEffect(() => {
-    const errorCode = searchParams.get("error_code");
-    const error = searchParams.get("error");
+    const params = new URLSearchParams(window.location.search);
+    const errorCode = params.get("error_code");
+    const error = params.get("error");
     if (errorCode === "bad_oauth_state" || error === "invalid_request") {
-      const next = searchParams.get("next") ?? "/#purchase";
+      const next = params.get("next") ?? "/#purchase";
       window.location.replace(`/login?error=state&next=${encodeURIComponent(next)}`);
     }
-  }, [searchParams]);
+  }, []);
 
   useEffect(() => {
     if (!introComplete) return;

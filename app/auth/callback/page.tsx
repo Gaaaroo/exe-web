@@ -1,20 +1,20 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useSearchParams } from "next/navigation";
 import { useRouter } from "next/navigation";
 import { Loader2, CheckCircle2, ArrowLeft } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 
 export default function AuthCallbackPage() {
-  const searchParams = useSearchParams();
   const router = useRouter();
   const [status, setStatus] = useState<"loading" | "ok" | "error">("loading");
 
   useEffect(() => {
     const run = async () => {
-      const next = searchParams.get("next") ?? "/";
-      const section = searchParams.get("section");
+      const url = new URL(window.location.href);
+      const params = url.searchParams;
+      const next = params.get("next") ?? "/";
+      const section = params.get("section");
 
       const { data, error } = await supabase.auth.getSession();
 
@@ -35,7 +35,7 @@ export default function AuthCallbackPage() {
       router.replace(target);
     };
     run();
-  }, [searchParams, router]);
+  }, [router]);
 
   const messages = {
     loading: { text: "Đang xác thực...", icon: Loader2 },
