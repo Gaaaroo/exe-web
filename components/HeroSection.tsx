@@ -100,7 +100,7 @@ const HeroSection = ({ onReady }: { onReady?: () => void }) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 3.6, duration: 1 }}
-          className="font-body text-sm tracking-[0.3em] text-parchment/60 mb-8 uppercase"
+          className="font-body text-lg md:text-xl tracking-[0.3em] text-parchment/60 mb-8 uppercase"
         >
           Di sản không chỉ để giữ gìn, mà là để sống lại
         </motion.p>
