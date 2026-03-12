@@ -3,6 +3,7 @@
 import { useRef, useEffect, useState, useCallback } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
 const HeroSection = ({ onReady }: { onReady?: () => void }) => {
@@ -29,8 +30,6 @@ const HeroSection = ({ onReady }: { onReady?: () => void }) => {
     return () => el?.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
-  const titleWords = ["KÝ", "ỨC", "DI", "SẢN"];
-
   return (
     <section
       id="hero"
@@ -54,8 +53,8 @@ const HeroSection = ({ onReady }: { onReady?: () => void }) => {
       />
 
       {/* Gradient overlays */}
-      <div className="absolute inset-0 bg-linear-to-t from-abyss via-abyss/60 to-transparent" />
-      <div className="absolute inset-0 bg-linear-to-b from-abyss/40 to-transparent h-1/3" />
+      <div className="absolute inset-0 bg-linear-to-t from-abyss/80 via-abyss/40 to-transparent" />
+      <div className="absolute inset-0 bg-linear-to-b from-abyss/25 to-transparent h-1/3" />
 
       {/* Floating particles */}
       {Array.from({ length: 15 }).map((_, i) => (
@@ -81,39 +80,30 @@ const HeroSection = ({ onReady }: { onReady?: () => void }) => {
 
       {/* Content */}
       <div className="relative z-10 text-center px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 3.2, duration: 0.8, ease: "easeOut" }}
+          className="mb-4 flex justify-center"
+        >
+          <Image
+            src="/typo.png"
+            alt="Ký Ức Di Sản"
+            width={800}
+            height={260}
+            priority
+            className="h-auto w-[260px] sm:w-[360px] md:w-[520px] lg:w-[640px] xl:w-[720px]"
+          />
+        </motion.div>
+
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 2.8, duration: 1 }}
-          className="font-body text-sm tracking-[0.3em] text-gold/70 mb-6 uppercase"
+          transition={{ delay: 3.6, duration: 1 }}
+          className="font-body text-sm tracking-[0.3em] text-parchment/60 mb-8 uppercase"
         >
           Di sản không chỉ để giữ gìn, mà là để sống lại
         </motion.p>
-
-        <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl tracking-wider text-gold-glow mb-8">
-          {titleWords.map((word, wordIndex) => (
-            <span
-              key={word}
-              className="inline-block whitespace-nowrap mr-3 last:mr-0"
-            >
-              {word.split("").map((char, i) => (
-                <motion.span
-                  key={`${word}-${i}`}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{
-                    delay: 3 + (wordIndex * 6 + i) * 0.04,
-                    duration: 0.6,
-                    ease: "easeOut",
-                  }}
-                  className="inline-block text-parchment"
-                >
-                  {char}
-                </motion.span>
-              ))}
-            </span>
-          ))}
-        </h1>
 
         <motion.p
           initial={{ opacity: 0 }}

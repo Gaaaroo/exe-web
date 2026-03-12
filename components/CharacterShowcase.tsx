@@ -1,10 +1,11 @@
-"use client";
+ "use client";
 
 import { Suspense, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import { motion } from "framer-motion";
 import * as THREE from "three";
+import { MyCharacter } from "./MyCharacter";
 
 const Pedestal = () => {
   const meshRef = useRef<THREE.Mesh>(null);
@@ -40,64 +41,7 @@ const Pedestal = () => {
           wireframe
         />
       </mesh>
-      {/* Warrior placeholder */}
-      <WarriorPlaceholder />
-    </group>
-  );
-};
-
-const WarriorPlaceholder = () => {
-  const groupRef = useRef<THREE.Group>(null);
-
-  useFrame((state) => {
-    if (groupRef.current) {
-      groupRef.current.position.y = Math.sin(state.clock.elapsedTime * 0.5) * 0.1 - 0.5;
-    }
-  });
-
-  return (
-    <group ref={groupRef}>
-      {/* Body */}
-      <mesh position={[0, 0.2, 0]}>
-        <capsuleGeometry args={[0.35, 1.2, 8, 16]} />
-        <meshStandardMaterial color="#4a3520" metalness={0.6} roughness={0.4} />
-      </mesh>
-      {/* Head */}
-      <mesh position={[0, 1.3, 0]}>
-        <sphereGeometry args={[0.25, 16, 16]} />
-        <meshStandardMaterial color="#6b4c30" metalness={0.4} roughness={0.5} />
-      </mesh>
-      {/* Helmet crest */}
-      <mesh position={[0, 1.6, 0]}>
-        <coneGeometry args={[0.12, 0.4, 8]} />
-        <meshStandardMaterial
-          color="#B9975B"
-          metalness={0.8}
-          roughness={0.2}
-          emissive="#B9975B"
-          emissiveIntensity={0.2}
-        />
-      </mesh>
-      {/* Shield (left) */}
-      <mesh position={[-0.55, 0.2, 0.1]} rotation={[0, 0.3, 0]}>
-        <circleGeometry args={[0.35, 16]} />
-        <meshStandardMaterial
-          color="#8B0000"
-          metalness={0.5}
-          roughness={0.3}
-          side={THREE.DoubleSide}
-        />
-      </mesh>
-      {/* Weapon (right) */}
-      <mesh position={[0.4, 0.5, 0]} rotation={[0, 0, -0.2]}>
-        <cylinderGeometry args={[0.02, 0.02, 1.8, 8]} />
-        <meshStandardMaterial color="#B9975B" metalness={0.9} roughness={0.1} />
-      </mesh>
-      {/* Weapon tip */}
-      <mesh position={[0.52, 1.35, 0]} rotation={[0, 0, -0.2]}>
-        <coneGeometry args={[0.06, 0.25, 6]} />
-        <meshStandardMaterial color="#c0c0c0" metalness={0.9} roughness={0.1} />
-      </mesh>
+      <MyCharacter />
     </group>
   );
 };
