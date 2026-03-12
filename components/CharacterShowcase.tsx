@@ -56,19 +56,25 @@ const CharacterShowcase = () => {
   return (
     <section
       id="character"
-      className="relative min-h-screen flex flex-col lg:flex-row items-center dong-son-pattern"
+      className="relative min-h-screen flex flex-col lg:flex-row items-center"
     >
       {/* 3D Canvas - Full bleed on large, stacked on mobile */}
       <div className="relative w-full lg:w-3/5 h-[60vh] lg:h-screen">
         <Suspense fallback={<Loader />}>
-          <Canvas camera={{ position: [0, 0.5, 4], fov: 45 }}>
-            <color attach="background" args={["#0A0A0A"]} />
-            <ambientLight intensity={0.3} />
-            <pointLight position={[5, 5, 5]} intensity={0.8} color="#B9975B" />
-            <pointLight position={[-3, 2, -3]} intensity={0.4} color="#8B0000" />
+          <Canvas
+            gl={{ alpha: true }}
+            camera={{ position: [0, 0.5, 4], fov: 45 }}
+            style={{ background: "transparent" }}
+          >
+            {/* Tăng sáng tổng thể cho nhân vật hơn nữa */}
+            <ambientLight intensity={0.9} />
+            <pointLight position={[4, 5, 4]} intensity={1.8} color="#FFE4B8" />
+            <pointLight position={[-3, 3, -2]} intensity={1} color="#FF9C5C" />
+            {/* Rim light nhẹ từ phía sau để tách nhân vật khỏi nền */}
+            <pointLight position={[0, 3, -4]} intensity={0.8} color="#FFFFFF" />
             <spotLight
-              position={[0, 5, 0]}
-              intensity={1}
+              position={[0, 6, 2]}
+              intensity={1.6}
               angle={0.4}
               penumbra={0.8}
               color="#B9975B"
@@ -86,9 +92,6 @@ const CharacterShowcase = () => {
             <fog attach="fog" args={["#0A0A0A", 5, 15]} />
           </Canvas>
         </Suspense>
-
-        {/* Vignette overlay */}
-        <div className="absolute inset-0 pointer-events-none bg-linear-to-r from-abyss/50 via-transparent to-abyss/50" />
       </div>
 
       {/* Lore text */}

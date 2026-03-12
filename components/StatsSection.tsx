@@ -23,7 +23,7 @@ const formatValue = (key: string, value: number): string => {
 
 const StatsSection = () => {
   return (
-    <section className="relative py-24 px-6 border-y border-parchment/10">
+    <section className="relative py-24 px-6">
       <div className="container mx-auto">
         <motion.div
           initial={{ opacity: 0 }}
