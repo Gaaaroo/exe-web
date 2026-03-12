@@ -1,13 +1,19 @@
 "use client";
 
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState, useCallback } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
-const HeroSection = () => {
+const HeroSection = ({ onReady }: { onReady?: () => void }) => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const hasCalledReady = useRef(false);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const handleReady = useCallback(() => {
+    if (hasCalledReady.current || !onReady) return;
+    hasCalledReady.current = true;
+    onReady();
+  }, [onReady]);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -23,7 +29,7 @@ const HeroSection = () => {
     return () => el?.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
-  const titleChars = "HUYỀN SỬ VIỆT".split("");
+  const titleWords = ["GAME"];
 
   return (
     <section
@@ -48,8 +54,8 @@ const HeroSection = () => {
       />
 
       {/* Gradient overlays */}
-      <div className="absolute inset-0 bg-gradient-to-t from-abyss via-abyss/60 to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-b from-abyss/40 to-transparent h-1/3" />
+      <div className="absolute inset-0 bg-linear-to-t from-abyss via-abyss/60 to-transparent" />
+      <div className="absolute inset-0 bg-linear-to-b from-abyss/40 to-transparent h-1/3" />
 
       {/* Floating particles */}
       {Array.from({ length: 15 }).map((_, i) => (
@@ -81,25 +87,31 @@ const HeroSection = () => {
           transition={{ delay: 2.8, duration: 1 }}
           className="font-body text-sm tracking-[0.3em] text-gold/70 mb-6 uppercase"
         >
-          Khám phá huyền thoại ngàn năm
+          Đi tìm lại những làng nghề đã lùi vào dĩ vãng
         </motion.p>
 
-        <h1 className="font-heading text-6xl md:text-8xl lg:text-9xl tracking-wider text-gold-glow mb-8">
-          {titleChars.map((char, i) => (
-            <motion.span
-              key={i}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                delay: 3 + i * 0.08,
-                duration: 0.6,
-                ease: "easeOut",
-              }}
-              className="inline-block text-parchment"
-              style={{ minWidth: char === " " ? "0.3em" : undefined }}
+        <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl tracking-wider text-gold-glow mb-8">
+          {titleWords.map((word, wordIndex) => (
+            <span
+              key={word}
+              className="inline-block whitespace-nowrap mr-3 last:mr-0"
             >
-              {char === " " ? "\u00A0" : char}
-            </motion.span>
+              {word.split("").map((char, i) => (
+                <motion.span
+                  key={`${word}-${i}`}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{
+                    delay: 3 + (wordIndex * 6 + i) * 0.04,
+                    duration: 0.6,
+                    ease: "easeOut",
+                  }}
+                  className="inline-block text-parchment"
+                >
+                  {char}
+                </motion.span>
+              ))}
+            </span>
           ))}
         </h1>
 
@@ -109,42 +121,33 @@ const HeroSection = () => {
           transition={{ delay: 4.2, duration: 1 }}
           className="font-body text-parchment/60 text-lg md:text-xl max-w-xl mx-auto mb-12 font-light"
         >
-          Một cuộc hành trình xuyên thời gian, nơi lịch sử và thần thoại hòa quyện
+          Một chuyến phiêu lưu tương tác, nơi bạn tự tay thắp sáng tranh kính, lồng đèn và những di sản đang dần bị lãng quên.
         </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 4.6, duration: 0.8 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
+          onAnimationComplete={handleReady}
+          className="flex flex-row items-center justify-center gap-4 sm:gap-5 flex-wrap"
         >
-          <Button asChild size="lg" className="px-8 py-3 tracking-widest uppercase heat-haze">
+          <Button
+            asChild
+            size="lg"
+            className="rounded-md w-[200px] px-8 py-3.5 text-sm font-medium tracking-[0.2em] uppercase heat-haze cursor-pointer bg-gold/20 border border-gold/60 text-parchment hover:bg-gold/30 hover:border-gold transition-all duration-300 shadow-[0_0_20px_rgba(185,151,91,0.15)]"
+          >
             <Link href="#purchase">MUA NGAY</Link>
           </Button>
           <Button
+            asChild
             variant="outline"
             size="lg"
-            className="px-8 py-3 border-parchment/30 text-parchment/80 tracking-widest uppercase heat-haze hover:border-gold/50 hover:text-gold"
+            className="rounded-md w-[200px] px-8 py-3.5 text-sm font-medium tracking-[0.2em] uppercase heat-haze cursor-pointer border-2 border-parchment/40 text-parchment/90 bg-transparent hover:border-parchment hover:bg-parchment/5 hover:text-parchment transition-all duration-300"
           >
-            XEM TRAILER
+            <Link href="#">XEM TRAILER</Link>
           </Button>
         </motion.div>
       </div>
-
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 5, duration: 1 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-      >
-        <span className="text-gold/40 text-xs font-body tracking-widest">CUỘN XUỐNG</span>
-        <motion.div
-          className="w-px h-8 bg-gradient-to-b from-gold/40 to-transparent"
-          animate={{ scaleY: [1, 0.5, 1] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-        />
-      </motion.div>
     </section>
   );
 };

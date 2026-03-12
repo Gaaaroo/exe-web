@@ -143,7 +143,7 @@ const CharacterShowcase = () => {
         </Suspense>
 
         {/* Vignette overlay */}
-        <div className="absolute inset-0 pointer-events-none bg-gradient-to-r from-abyss/50 via-transparent to-abyss/50" />
+        <div className="absolute inset-0 pointer-events-none bg-linear-to-r from-abyss/50 via-transparent to-abyss/50" />
       </div>
 
       {/* Lore text */}
@@ -155,12 +155,12 @@ const CharacterShowcase = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <p className="font-body text-xs tracking-[0.3em] text-gold/60 uppercase mb-4">
-            Nhân vật chính
+            Người dẫn lối
           </p>
           <h2 className="font-heading text-4xl md:text-5xl text-parchment mb-2">
-            Lạc Tướng
+            Người Thắp Đèn
           </h2>
-          <div className="w-16 h-px bg-gradient-to-r from-gold to-transparent mb-6" />
+          <div className="w-16 h-px bg-linear-to-r from-gold to-transparent mb-6" />
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -169,9 +169,9 @@ const CharacterShowcase = () => {
             transition={{ delay: 0.2, duration: 0.8 }}
             className="font-body text-parchment/60 leading-relaxed mb-6 font-light"
           >
-            Vị tướng huyền thoại của Âu Lạc, người mang trong mình dòng máu của Rồng Tiên. Được
-            rèn luyện từ thuở thiếu thời bởi các bậc hiền triết trên đỉnh Ba Vì, Lạc Tướng sở hữu
-            sức mạnh phi thường và trí tuệ siêu phàm.
+            Một nghệ nhân trẻ mang theo chiếc đèn lồng đầu tiên của gia đình, lên đường đi qua
+            những ngôi làng đang dần tắt lửa nghề. Mỗi nơi bạn ghé qua là một cơ hội để học lại
+            cách cắt giấy, ghép kính, pha men, dệt vải.
           </motion.p>
 
           <motion.p
@@ -181,9 +181,9 @@ const CharacterShowcase = () => {
             transition={{ delay: 0.4, duration: 0.8 }}
             className="font-body text-parchment/40 leading-relaxed mb-8 font-light text-sm"
           >
-            Với thanh kiếm thần Thuận Thiên và tấm khiên Đông Sơn cổ xưa, Lạc Tướng bước vào cuộc
-            chiến bảo vệ non sông, đối đầu với những thế lực hắc ám đe dọa xóa sổ nền văn minh
-            Việt cổ.
+            Mục tiêu của bạn không phải đánh bại quái vật, mà là thuyết phục người dân cùng thắp
+            lại ánh sáng trong xưởng, dựng lại những hoa văn đã mờ và kể tiếp câu chuyện của từng
+            làng nghề trước khi chúng biến mất.
           </motion.p>
 
           <motion.div

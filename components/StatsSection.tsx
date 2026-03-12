@@ -11,10 +11,10 @@ interface GameStat {
 }
 
 const fallbackStats: GameStat[] = [
-  { key: "total_landmarks", value: 50, label: "Di Tích Lịch Sử" },
-  { key: "total_artifacts", value: 100, label: "Cổ Vật Khám Phá" },
-  { key: "graphics_quality", value: 4, label: "Đồ Họa Siêu Thực" },
-  { key: "play_hours", value: 40, label: "Nội Dung Chơi" },
+  { key: "total_landmarks", value: 20, label: "Làng Nghề Khám Phá" },
+  { key: "total_artifacts", value: 120, label: "Mẫu Thủ Công Tái Dựng" },
+  { key: "graphics_quality", value: 4, label: "Hiệu Ứng Ánh Sáng" },
+  { key: "play_hours", value: 25, label: "Giờ Hành Trình" },
 ];
 
 const formatValue = (key: string, value: number): string => {
@@ -39,7 +39,7 @@ const StatsSection = () => {
   }, []);
 
   return (
-    <section className="relative py-24 px-6 border-y border-border">
+    <section className="relative py-24 px-6 border-y border-parchment/10">
       <div className="container mx-auto">
         <motion.div
           initial={{ opacity: 0 }}

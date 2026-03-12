@@ -9,7 +9,7 @@ const links = [
 
 const GameFooter = () => {
   return (
-    <footer className="border-t border-border py-16 px-6">
+    <footer className="border-t border-parchment/10 py-8 px-4 text-sm">
       <div className="container mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -17,11 +17,11 @@ const GameFooter = () => {
           viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 0.8 }}
         >
-          <p className="font-heading text-2xl text-gold tracking-widest mb-8">
-            HUYỀN SỬ VIỆT
+          <p className="font-heading text-lg md:text-xl text-gold tracking-[0.3em] mb-4 uppercase">
+            GAME
           </p>
 
-          <div className="flex items-center justify-center gap-8 mb-12">
+          <div className="flex items-center justify-center gap-6 mb-6">
             {links.map((link) => (
               <a
                 key={link.label}
@@ -33,7 +33,7 @@ const GameFooter = () => {
             ))}
           </div>
 
-          <div className="w-16 h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent mx-auto mb-8" />
+          <div className="w-12 h-px bg-linear-to-r from-transparent via-gold/30 to-transparent mx-auto mb-4" />
 
           <p className="font-body text-xs text-parchment/20 tracking-wider">
             © 2026 Lacquer &amp; Lens Studio. Bảo lưu mọi quyền.

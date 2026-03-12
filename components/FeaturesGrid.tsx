@@ -4,21 +4,21 @@ import { Landmark, Gamepad2, Music } from "lucide-react";
 const features = [
   {
     icon: Landmark,
-    title: "Văn Hóa Nghìn Năm",
+    title: "Game name",
     description:
-      "Tái hiện chân thực hàng nghìn năm lịch sử với hơn 50 di tích được mô phỏng từ các công trình thực tế của Việt Nam.",
+      "Bước qua những con ngõ nhỏ, ghé thăm các làng làm lồng đèn, tranh kính, gốm, mây tre… được lấy cảm hứng từ những không gian thật.",
   },
   {
     icon: Gamepad2,
-    title: "Lối Chơi Đột Phá",
+    title: "Thủ Công Tương Tác",
     description:
-      "Hệ thống chiến đấu đậm chất võ thuật cổ truyền, kết hợp phép thuật dựa trên Ngũ Hành và truyền thuyết dân gian.",
+      "Chuỗi minigame nơi bạn tự tay cắt giấy, ghép kính, pha màu, thắp nến… mỗi thao tác đều ảnh hưởng tới tác phẩm cuối cùng.",
   },
   {
     icon: Music,
-    title: "Âm Nhạc Dân Tộc",
+    title: "Không Gian Lễ Hội",
     description:
-      "Nhạc nền được sáng tác bởi nghệ sĩ hàng đầu, sử dụng nhạc cụ truyền thống: đàn bầu, đàn tranh, sáo trúc.",
+      "Nhạc nền và âm thanh môi trường tái hiện tiếng chợ, tiếng lò gốm, tiếng kéo cưa… cho cảm giác đang thật sự bước vào một lễ hội văn hóa.",
   },
 ] as const;
 
@@ -70,10 +70,10 @@ const FeaturesGrid = () => {
             <motion.div
               key={feature.title}
               variants={itemVariants}
-              className="group relative p-8 border border-border bg-card hover:border-gold/30 transition-all duration-500"
+              className="group relative p-8 border border-parchment/10 bg-card hover:border-gold/30 transition-all duration-500"
             >
               {/* Glow effect on hover */}
-              <div className="absolute inset-0 bg-gradient-to-b from-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-linear-to-b from-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
               <div className="relative">
                 <div className="mb-6 inline-flex items-center justify-center w-12 h-12">

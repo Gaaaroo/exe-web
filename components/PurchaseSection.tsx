@@ -9,31 +9,31 @@ import { Button } from "@/components/ui/button";
 const editions = [
   {
     name: "Standard Edition",
-    price: "799.000₫",
-    amount: 799000,
+    price: "250.000₫",
+    amount: 250000,
     edition: "standard",
     icon: Shield,
     features: [
-      "Game đầy đủ",
-      "Bản đồ thế giới mở",
-      "Cập nhật miễn phí",
-      "Nhạc nền gốc (Digital)",
+      "Câu chuyện chính trọn vẹn",
+      "4 làng nghề để khám phá",
+      "Chế độ trải nghiệm tự do",
+      "Nhạc nền gốc lấy cảm hứng từ lễ hội",
     ],
     cta: "MUA NGAY",
     featured: false,
   },
   {
     name: "Collector's Edition",
-    price: "1.499.000₫",
-    amount: 1499000,
+    price: "399.000₫",
+    amount: 399000,
     edition: "collector",
     icon: Crown,
     features: [
-      "Tất cả Standard Edition",
-      "Art Book kỹ thuật số",
-      "3 DLC mở rộng",
-      "Trang phục Hoàng Đế",
-      "Nhạc nền Vinyl",
+      "Tất cả nội dung Standard Edition",
+      "Art Book kỹ thuật số về làng nghề",
+      "3 tuyến nhiệm vụ mở rộng",
+      "Bộ skin đặc biệt cho xưởng của bạn",
+      "Album nhạc lễ hội chất lượng cao",
       "Truy cập sớm 7 ngày",
     ],
     cta: "ĐẶT TRƯỚC",
@@ -108,7 +108,7 @@ const PurchaseSection = () => {
               viewport={{ once: false, amount: 0.2 }}
               transition={{ delay: i * 0.15, duration: 0.7 }}
               className={`relative p-8 border transition-all duration-500 ${
-                edition.featured ? "border-gold/40 bg-card" : "border-border bg-card"
+                edition.featured ? "border-gold/40 bg-card" : "border-parchment/10 bg-card"
               }`}
             >
               {edition.featured && (
@@ -138,7 +138,7 @@ const PurchaseSection = () => {
                 disabled={loading === edition.edition}
                 variant={edition.featured ? "default" : "outline"}
                 size="lg"
-                className={`heat-haze w-full py-3 tracking-widest uppercase disabled:opacity-50 ${
+                className={`heat-haze w-full py-3 tracking-widest uppercase disabled:opacity-50 cursor-pointer ${
                   edition.featured
                     ? "bg-lacquer border border-lacquer text-parchment hover:bg-lacquer/80"
                     : "border border-gold/30 text-gold hover:border-gold"
@@ -150,18 +150,6 @@ const PurchaseSection = () => {
           ))}
         </div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: false, amount: 0.3 }}
-          transition={{ delay: 0.4, duration: 0.8 }}
-          className="flex items-center justify-center gap-2 mt-12"
-        >
-          <Shield className="w-4 h-4 text-gold/40" />
-          <span className="font-body text-xs text-parchment/30 tracking-wider">
-            Thanh toán bảo mật qua PayOS / VietQR
-          </span>
-        </motion.div>
       </div>
     </section>
   );
