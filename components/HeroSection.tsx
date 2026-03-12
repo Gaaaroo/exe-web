@@ -29,7 +29,7 @@ const HeroSection = ({ onReady }: { onReady?: () => void }) => {
     return () => el?.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
-  const titleWords = ["GAME"];
+  const titleWords = ["KÝ", "ỨC", "DI", "SẢN"];
 
   return (
     <section
@@ -41,7 +41,7 @@ const HeroSection = ({ onReady }: { onReady?: () => void }) => {
       <motion.div
         className="absolute inset-0"
         style={{
-          backgroundImage: "url(/hero-bg.jpg)",
+          backgroundImage: "url(/phongcanh.png)",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -87,7 +87,7 @@ const HeroSection = ({ onReady }: { onReady?: () => void }) => {
           transition={{ delay: 2.8, duration: 1 }}
           className="font-body text-sm tracking-[0.3em] text-gold/70 mb-6 uppercase"
         >
-          Đi tìm lại những làng nghề đã lùi vào dĩ vãng
+          Di sản không chỉ để giữ gìn, mà là để sống lại
         </motion.p>
 
         <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl tracking-wider text-gold-glow mb-8">

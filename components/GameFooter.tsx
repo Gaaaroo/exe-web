@@ -18,7 +18,7 @@ const GameFooter = () => {
           transition={{ duration: 0.8 }}
         >
           <p className="font-heading text-lg md:text-xl text-gold tracking-[0.3em] mb-4 uppercase">
-            GAME
+            KÝ ỨC DI SẢN
           </p>
 
           <div className="flex items-center justify-center gap-6 mb-6">

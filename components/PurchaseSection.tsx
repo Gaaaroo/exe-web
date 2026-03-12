@@ -9,17 +9,33 @@ import { Button } from "@/components/ui/button";
 const editions = [
   {
     name: "Standard Edition",
-    price: "250.000₫",
-    amount: 250000,
+    price: "0₫",
+    amount: 0,
     edition: "standard",
     icon: Shield,
     features: [
-      "Câu chuyện chính trọn vẹn",
-      "4 làng nghề để khám phá",
-      "Chế độ trải nghiệm tự do",
-      "Nhạc nền gốc lấy cảm hứng từ lễ hội",
+      "Bắt đầu hành trình hồi sinh di sản hoàn toàn miễn phí.",
+      "Trải nghiệm cốt lõi: tự do khám phá hành trình tìm lại các làng nghề truyền thống.",
+      "Làng nghề cơ bản: du hành qua những không gian di sản tiêu biểu đã được mở khóa.",
+      "Cơ chế đặc trưng: sử dụng miễn phí năng lực Nhãn giới ký ức để khám phá điển tích.",
+      "Nhạc nền lễ hội: đắm chìm trong không gian âm thanh chợ quê và làng nghề sống động.",
     ],
-    cta: "MUA NGAY",
+    cta: "CHƠI NGAY",
+    featured: false,
+  },
+  {
+    name: "Mở Rộng Vùng Đất (DLC Map)",
+    price: "99.000₫",
+    amount: 99000,
+    edition: "dlc_map",
+    icon: Shield,
+    features: [
+      "Mở rộng hành trình đến những vùng đất di sản mới.",
+      "Map làng nghề mới với các khu vực chuyên biệt như Làng Tranh Kiếng Nam Bộ hoặc Làng Nón Lá.",
+      "Nhiệm vụ độc quyền với mini-game độ khó cao và vật phẩm hiếm.",
+      "Vật phẩm trang trí: bộ skin xưởng nghề đặc trưng theo từng vùng bản đồ.",
+    ],
+    cta: "MUA THÊM",
     featured: false,
   },
   {
@@ -29,12 +45,10 @@ const editions = [
     edition: "collector",
     icon: Crown,
     features: [
-      "Tất cả nội dung Standard Edition",
-      "Art Book kỹ thuật số về làng nghề",
-      "3 tuyến nhiệm vụ mở rộng",
-      "Bộ skin đặc biệt cho xưởng của bạn",
-      "Album nhạc lễ hội chất lượng cao",
-      "Truy cập sớm 7 ngày",
+      "Trọn bộ nội dung: bao gồm Standard Edition và tất cả các Map mở rộng.",
+      "Art Book & Album nhạc chất lượng cao về các phố phường và làng nghề Việt.",
+      "Đặc quyền Premium: bộ cổ phục giới hạn dành riêng cho người kế thừa di sản.",
+      "Quyền truy cập sớm các tính năng mới trong 7 ngày.",
     ],
     cta: "ĐẶT TRƯỚC",
     featured: true,
@@ -99,7 +113,7 @@ const PurchaseSection = () => {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {editions.map((edition, i) => (
             <motion.div
               key={edition.name}
@@ -107,7 +121,7 @@ const PurchaseSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.2 }}
               transition={{ delay: i * 0.15, duration: 0.7 }}
-              className={`relative p-8 border transition-all duration-500 ${
+              className={`relative flex flex-col h-full p-8 border transition-all duration-500 ${
                 edition.featured ? "border-gold/40 bg-card" : "border-parchment/10 bg-card"
               }`}
             >
@@ -138,7 +152,7 @@ const PurchaseSection = () => {
                 disabled={loading === edition.edition}
                 variant={edition.featured ? "default" : "outline"}
                 size="lg"
-                className={`heat-haze w-full py-3 tracking-widest uppercase disabled:opacity-50 cursor-pointer ${
+                className={`mt-auto heat-haze w-full py-3 tracking-widest uppercase disabled:opacity-50 cursor-pointer ${
                   edition.featured
                     ? "bg-lacquer border border-lacquer text-parchment hover:bg-lacquer/80"
                     : "border border-gold/30 text-gold hover:border-gold"

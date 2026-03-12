@@ -18,6 +18,7 @@ const Index = () => {
 
   useEffect(() => {
     if (!introComplete) return;
+    // Nếu user quay về với hash (vd. /#purchase sau khi đăng nhập) thì cho scroll ngay, không cần đợi hero
     if (typeof window !== "undefined" && window.location.hash) {
       setCanScroll(true);
       return;
