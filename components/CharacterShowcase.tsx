@@ -2,7 +2,7 @@
 
 import { Suspense, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { OrbitControls, Environment } from "@react-three/drei";
+import { OrbitControls } from "@react-three/drei";
 import { motion } from "framer-motion";
 import * as THREE from "three";
 
@@ -118,6 +118,7 @@ const CharacterShowcase = () => {
       <div className="relative w-full lg:w-3/5 h-[60vh] lg:h-screen">
         <Suspense fallback={<Loader />}>
           <Canvas camera={{ position: [0, 0.5, 4], fov: 45 }}>
+            <color attach="background" args={["#0A0A0A"]} />
             <ambientLight intensity={0.3} />
             <pointLight position={[5, 5, 5]} intensity={0.8} color="#B9975B" />
             <pointLight position={[-3, 2, -3]} intensity={0.4} color="#8B0000" />
@@ -137,7 +138,7 @@ const CharacterShowcase = () => {
               autoRotate
               autoRotateSpeed={0.5}
             />
-            <Environment preset="night" />
+
             <fog attach="fog" args={["#0A0A0A", 5, 15]} />
           </Canvas>
         </Suspense>
@@ -213,4 +214,3 @@ const CharacterShowcase = () => {
 };
 
 export default CharacterShowcase;
-
