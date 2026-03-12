@@ -1,8 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { supabase } from "@/integrations/supabase/client";
 
 interface GameStat {
   key: string;
@@ -10,7 +8,7 @@ interface GameStat {
   label: string;
 }
 
-const fallbackStats: GameStat[] = [
+const stats: GameStat[] = [
   { key: "total_landmarks", value: 20, label: "Làng Nghề Khám Phá" },
   { key: "total_artifacts", value: 120, label: "Mẫu Thủ Công Tái Dựng" },
   { key: "graphics_quality", value: 4, label: "Hiệu Ứng Ánh Sáng" },
@@ -24,20 +22,6 @@ const formatValue = (key: string, value: number): string => {
 };
 
 const StatsSection = () => {
-  const [stats, setStats] = useState<GameStat[]>(fallbackStats);
-
-  useEffect(() => {
-    const fetchStats = async () => {
-      const { data, error } = await supabase
-        .from("game_stats")
-        .select("key, value, label");
-      if (!error && data && Array.isArray(data) && data.length) {
-        setStats(data as GameStat[]);
-      }
-    };
-    void fetchStats();
-  }, []);
-
   return (
     <section className="relative py-24 px-6 border-y border-parchment/10">
       <div className="container mx-auto">

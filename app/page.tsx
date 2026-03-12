@@ -10,6 +10,7 @@ import FeaturesGrid from "@/components/FeaturesGrid";
 import StatsSection from "@/components/StatsSection";
 import PurchaseSection from "@/components/PurchaseSection";
 import GameFooter from "@/components/GameFooter";
+import BackToTop from "@/components/BackToTop";
 
 const Index = () => {
   const [introComplete, setIntroComplete] = useState(false);
@@ -86,6 +87,7 @@ const Index = () => {
           <StatsSection />
           <PurchaseSection />
           <GameFooter />
+          <BackToTop />
         </>
       )}
     </div>
