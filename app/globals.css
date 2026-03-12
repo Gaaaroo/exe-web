@@ -169,6 +169,35 @@
   .story-link:hover *::after {
     @apply scale-x-100 origin-bottom-left;
   }
+
+  .world-background {
+    position: relative;
+    z-index: 0;
+  }
+
+  .world-background::before,
+  .world-background::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  .world-background::before {
+    background-image: url("/phongcanh3.png");
+    background-size: cover;
+    background-position: center;
+  }
+
+  .world-background::after {
+    /* Overlay chung cho các section dưới hero: nền rất tối, chỉ giữ lại chút xíu texture */
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.9),
+      rgba(0, 0, 0, 1)
+    );
+  }
 }
 
 /* Scrollbar */

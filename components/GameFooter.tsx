@@ -9,7 +9,7 @@ const links = [
 
 const GameFooter = () => {
   return (
-    <footer className="border-t border-parchment/10 py-8 px-4 text-sm">
+    <footer className="py-8 px-4 text-sm">
       <div className="container mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

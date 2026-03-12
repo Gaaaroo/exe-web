@@ -2,10 +2,7 @@ import { motion } from "framer-motion";
 
 const AboutSection = () => {
   return (
-    <section
-      id="about"
-      className="relative min-h-screen flex items-center border-y border-border/40 bg-abyss/80"
-    >
+    <section id="about" className="relative min-h-screen flex items-center">
       <div className="container mx-auto px-6 py-16 md:py-20 grid gap-12 md:grid-cols-[1.2fr,0.8fr] items-start">
         <div>
           <p className="font-body text-xs tracking-[0.3em] text-gold/70 uppercase mb-4">

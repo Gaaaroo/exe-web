@@ -53,8 +53,8 @@ const HeroSection = ({ onReady }: { onReady?: () => void }) => {
       />
 
       {/* Gradient overlays */}
-      <div className="absolute inset-0 bg-linear-to-t from-abyss/80 via-abyss/40 to-transparent" />
-      <div className="absolute inset-0 bg-linear-to-b from-abyss/25 to-transparent h-1/3" />
+      <div className="absolute inset-0 bg-linear-to-t from-abyss/75 via-abyss/35 to-transparent" />
+      <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-b from-transparent via-abyss/30 to-abyss/45" />
 
       {/* Floating particles */}
       {Array.from({ length: 15 }).map((_, i) => (

@@ -82,13 +82,15 @@ const Index = () => {
         <>
           <Navigation />
           <HeroSection onReady={() => setCanScroll(true)} />
-          <AboutSection />
-          <CharacterShowcase />
-          <FeaturesGrid />
-          <StatsSection />
-          <PurchaseSection />
-          <GameFooter />
-          <BackToTop />
+          <div className="world-background">
+            <AboutSection />
+            <CharacterShowcase />
+            <FeaturesGrid />
+            <StatsSection />
+            <PurchaseSection />
+            <GameFooter />
+            <BackToTop />
+          </div>
         </>
       )}
     </div>
