@@ -6,10 +6,9 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Navigation from '@/components/Navigation';
 
-const CharacterCanvas = dynamic(
-  () => import('@/components/CharacterCanvas'),
-  { ssr: false },
-);
+const CharacterCanvas = dynamic(() => import('@/components/CharacterCanvas'), {
+  ssr: false,
+});
 
 type Star = {
   w: number;
@@ -37,16 +36,20 @@ export default function CharacterPage() {
 
   return (
     <div className='min-h-screen flex flex-col'>
-      <video autoPlay loop muted playsInline className='fixed inset-0 w-full h-full object-cover -z-10' src='/bg-ani.mp4' />
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className='fixed inset-0 w-full h-full object-cover -z-10'
+        src='/bg-ani.mp4'
+      />
       <Navigation />
 
       {/* Main character section */}
-      <section
-        className='flex-1 relative flex items-center overflow-hidden'
-        style={{ minHeight: 'calc(100vh - 120px)' }}
-      >
+      <section className='flex-1 relative flex items-center'>
         {/* 3D Canvas — full bleed background */}
-        <div className='absolute inset-0 z-0'>
+        <div className='pl-25 absolute inset-0 z-0'>
           <CharacterCanvas />
         </div>
 
@@ -71,19 +74,19 @@ export default function CharacterPage() {
           />
         ))}
 
-        <div className='relative z-10 w-full max-w-300 mx-auto px-8 md:px-16 py-20 flex items-center justify-between gap-8 pointer-events-none'>
+        <div className='relative z-10 max-w-300 mx-auto flex items-center justify-between gap-8 pointer-events-none'>
           {/* Left: Character info */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, ease: 'easeOut' }}
-            className='max-w-[420px] pointer-events-auto'
+            className='w-full pointer-events-auto'
           >
-            <h1 className='text-green-400 text-4xl font-bold mb-5 leading-snug'>
+            <h1 className='font-light text-green-400 text-4xl mb-5'>
               Người thừa kế Di Sản
             </h1>
 
-            <div className='text-white/70 text-sm leading-relaxed space-y-3 mb-8 font-light text-justify'>
+            <div className='font-body text-white/70 text-sm leading-relaxed space-y-3 mb-8 font-light text-justify'>
               <p>
                 Bạn vào vai một người trẻ yêu văn hóa, bắt đầu hành trình du
                 hành qua các vùng miền để tìm lại những giá trị đang dần lùi xa
@@ -106,7 +109,7 @@ export default function CharacterPage() {
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
               onClick={() => setVoicePlaying((p) => !p)}
-              className='flex items-center justify-between gap-4 border border-white/30 bg-white/5 hover:bg-white/10 text-white/80 hover:text-white px-6 py-3 rounded-full text-sm font-medium transition-all duration-200 cursor-pointer min-w-[180px]'
+              className='flex items-center justify-between gap-4 border border-white/30 bg-white/5 hover:bg-white/10 text-white/80 hover:text-white px-6 py-3 rounded-full text-sm font-medium transition-all duration-200 cursor-pointer'
             >
               <span>Voice</span>
               <svg
@@ -181,16 +184,14 @@ export default function CharacterPage() {
               </svg>
             </motion.button>
           </motion.div>
-
-          {/* Spacer */}
-          <div className='flex-1 pointer-events-none' />
+          <div className='w-7xl'></div>
 
           {/* Right: Character portrait + buttons */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, ease: 'easeOut', delay: 0.1 }}
-            className='flex flex-col items-center gap-5 shrink-0 pointer-events-auto'
+            className='flex flex-col items-center gap-5 pointer-events-auto'
           >
             {/* Character portrait */}
             <div className='w-24 h-24 md:w-28 md:h-28 rounded-lg overflow-hidden border border-white/20 bg-[#0b1528]'>
@@ -214,7 +215,7 @@ export default function CharacterPage() {
             <motion.button
               type='button'
               whileHover={{ scale: 1.03 }}
-              className='flex items-center gap-3 bg-green-400 hover:bg-green-400 text-black text-white text-2xl pl-7 pr-2 py-2 mr-11 rounded-full transition-colors duration-200 cursor-pointer min-w-[160px] justify-between'
+              className='flex items-center gap-3 bg-green-400 hover:bg-green-400 text-white text-2xl pl-7 pr-2 py-2 mr-11 rounded-full transition-colors duration-200 cursor-pointer min-w-[160px] justify-between'
             >
               More
               <span className='w-8 h-8 rounded-full bg-[#1a4a3a] shrink-0' />
@@ -225,10 +226,7 @@ export default function CharacterPage() {
 
       {/* Bottom CTA strip */}
       <div className='bg-white flex items-center justify-between px-8 md:px-16 py-8'>
-        <h2
-          className='text-[#0a3d3a] font-black text-3xl md:text-4xl tracking-widest uppercase'
-          style={{ fontFamily: 'var(--font-heading)' }}
-        >
+        <h2 className='font-heading text-[#0a3d3a] font-black text-3xl md:text-4xl tracking-widest uppercase'>
           KÝ ỨC DI SẢN
         </h2>
         <a

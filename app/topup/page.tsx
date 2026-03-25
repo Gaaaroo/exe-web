@@ -27,7 +27,14 @@ export default function TopUpPage() {
 
   return (
     <div className='min-h-screen flex flex-col'>
-      <video autoPlay loop muted playsInline className='fixed inset-0 w-full h-full object-cover -z-10' src='/bg-ani.mp4' />
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className='fixed inset-0 w-full h-full object-cover -z-10'
+        src='/bg-ani.mp4'
+      />
       <Navigation />
 
       {/* Star field */}
@@ -56,10 +63,10 @@ export default function TopUpPage() {
             transition={{ duration: 0.6 }}
             className='mb-8'
           >
-            <h1 className='text-4xl sm:text-5xl font-black text-green-400 uppercase tracking-widest leading-tight'>
+            <h1 className='text-4xl sm:text-5xl font-heading text-green-400 uppercase tracking-widest leading-tight'>
               KÝ ỨC DI SẢN
             </h1>
-            <p className='text-green-400 font-bold tracking-[0.3em] text-sm uppercase mt-1'>
+            <p className='font-body text-xs tracking-[0.3em] text-gold/70 uppercase mt-1'>
               TOP - UP CENTER
             </p>
           </motion.div>
@@ -79,11 +86,10 @@ export default function TopUpPage() {
               className='object-cover object-top'
               priority
             />
-            <div className='absolute inset-0 bg-gradient-to-t from-[#060d1e]/60 to-transparent' />
           </motion.div>
 
           {/* Account notice */}
-          <p className='text-white/50 text-xs mb-8'>
+          <p className='font-body text-white/50 text-sm mb-8'>
             No character under current account, please switch to another
             account.
           </p>
@@ -96,10 +102,10 @@ export default function TopUpPage() {
             transition={{ duration: 0.5 }}
             className='mb-8'
           >
-            <h2 className='text-green-400 font-bold text-xl mb-1'>
+            <h2 className='font-heading text-xl text-green-400 mb-1'>
               Exclusive Top-Up Center Discount
             </h2>
-            <p className='text-white/50 text-sm'>
+            <p className='font-body text-white/50 text-sm'>
               Switch account to claim exclusive rewards
             </p>
           </motion.div>
@@ -112,7 +118,7 @@ export default function TopUpPage() {
             transition={{ duration: 0.5, delay: 0.05 }}
             className='mb-8'
           >
-            <h3 className='text-green-400 font-bold text-base mb-3'>
+            <h3 className='font-body text-xs tracking-[0.3em] text-gold/70 uppercase mb-3'>
               Payment Method
             </h3>
             <div className='grid grid-cols-2 gap-3'>
@@ -175,7 +181,7 @@ export default function TopUpPage() {
                 >
                   <div className='relative flex-1 flex items-center justify-center bg-white'>
                     {/* Quantity badge */}
-                    <span className='absolute top-2 right-3 text-xs font-bold text-green-500'>
+                    <span className='absolute top-18 right-20 text-lg font-light text-green-500'>
                       {pkg.qty}
                     </span>
                     <div className='group-hover:scale-105 transition-transform duration-200'>
@@ -190,8 +196,8 @@ export default function TopUpPage() {
                     </div>
                   </div>
                   {/* Price button */}
-                  <div className='bg-green-400 py-2 text-center shrink-0'>
-                    <span className='text-black font-bold text-sm'>
+                  <div className='bg-green-400 hover:bg-yellow-400 py-4 text-center shrink-0 m-5'>
+                    <span className='text-black font-light text-lg'>
                       {pkg.price}
                     </span>
                   </div>

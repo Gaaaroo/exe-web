@@ -28,35 +28,35 @@ const mechanics = [
     title: 'Thủ công tương tác',
     image: '/mechanics/thu-cong-tuong-tac.jpg',
     description:
-      'Hệ thống chế tác cho phép người chơi trực tiếp tham gia vào từng công đoạn làm nghề thủ công truyền thống. Mỗi sản phẩm mang dấu ấn riêng của người tạo ra nó.',
+      'Chuỗi game mô phỏng nơi bạn trực tiếp “nhúng tay” vào từng công đoạn: cắt giấy, ghép kính, pha màu, thắp nến… Mỗi thao tác đều ảnh hưởng trực tiếp đến độ tinh xảo của tác phẩm.',
   },
   {
     id: 3,
     title: 'Giải đố văn hóa',
     image: '/mechanics/giai-do-van-hoa.jpg',
     description:
-      'Các câu đố được lồng ghép khéo léo trong hành trình khám phá di sản văn hóa. Người chơi cần hiểu sâu về phong tục, tập quán để vượt qua những thử thách này.',
+      'Giải đố văn hóa là hành trình ngược dòng thời gian, nơi mỗi câu đố là một "mật mã" dẫn dắt người chơi khám phá những tầng sâu ẩn giấu của phong tục, lịch sử và trí tuệ dân gian.',
   },
   {
     id: 4,
     title: 'Hệ thống Gia sản',
     image: '/mechanics/he-thong-gia-san.jpg',
     description:
-      'Xây dựng và phát triển gia tộc qua nhiều thế hệ. Mỗi quyết định của người chơi sẽ ảnh hưởng đến di sản để lại cho thế hệ kế tiếp trong thế giới game.',
+      'Hệ thống gia sản là kho tàng lưu giữ những báu vật tinh thần và vật chất qua nhiều đời, nơi mỗi kỷ vật hay phong tục đều là một "mảnh ghép" định hình nên bản sắc và sự hưng thịnh bền vững của một dòng tộc hay cộng đồng.',
   },
   {
     id: 5,
     title: 'Cá nhân hóa & Tủ đồ',
     image: '/mechanics/ca-nhan-hoa.jpg',
     description:
-      'Tùy chỉnh nhân vật với trang phục và phụ kiện lấy cảm hứng từ trang phục truyền thống Việt Nam. Mỗi bộ trang phục mang theo câu chuyện và ý nghĩa lịch sử riêng.',
+      'Tủ đồ cá nhân hóa là không gian để bạn tự do định hình phong cách và khí chất riêng, nơi mỗi bộ trang phục hay phụ kiện không chỉ là diện mạo mà còn là sự kế thừa tinh hoa, giúp nhân vật khẳng định bản sắc độc bản trong hành trình di sản.',
   },
   {
     id: 6,
     title: 'Nhiệm vụ ban đêm & Kinh dị dân gian',
     image: '/mechanics/nhiem-vu-ban-dem.jpg',
     description:
-      'Khi màn đêm buông xuống, thế giới game biến đổi với những nhiệm vụ bí ẩn gắn liền với truyền thuyết và tín ngưỡng dân gian Việt Nam. Khám phá phần tối của lịch sử.',
+      'Nhiệm vụ ban đêm & Kinh dị dân gian là cuộc dấn thân vào những góc khuất linh thiêng khi bóng tối buông xuống, nơi các lời nguyền cổ xưa và những tập tục bí ẩn trỗi dậy, thách thức sự can trường của người kế thừa trước những nỗi sợ truyền kiếp từ lòng đất mẹ.',
   },
 ];
 
@@ -81,7 +81,14 @@ export default function MechanicsPage() {
 
   return (
     <div className='min-h-screen text-white flex flex-col'>
-      <video autoPlay loop muted playsInline className='fixed inset-0 w-full h-full object-cover -z-10' src='/bg-ani.mp4' />
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className='fixed inset-0 w-full h-full object-cover -z-10'
+        src='/bg-ani.mp4'
+      />
       <Navigation />
 
       {/* Starfield */}
@@ -189,10 +196,10 @@ export default function MechanicsPage() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.7, ease: 'easeOut', delay: 0.1 }}
               >
-                <h2 className='text-5xl text-green-400 mb-6 leading-tight'>
+                <h2 className='font-heading text-5xl text-green-400 mb-6 leading-tight'>
                   {current.title}
                 </h2>
-                <p className='text-white/80 text-base leading-relaxed text-justify'>
+                <p className='font-body text-white/80 text-base leading-relaxed text-justify'>
                   {current.description}
                 </p>
               </motion.div>
@@ -204,8 +211,7 @@ export default function MechanicsPage() {
       {/* Bottom CTA strip */}
       <div className='relative z-10 bg-white flex items-center justify-between px-8 md:px-16 py-8'>
         <h2
-          className='text-[#0a3d3a] font-black text-3xl md:text-4xl tracking-widest uppercase'
-          style={{ fontFamily: 'var(--font-heading)' }}
+          className='font-heading text-[#0a3d3a] font-black text-3xl md:text-4xl tracking-widest uppercase'
         >
           KÝ ỨC DI SẢN
         </h2>
