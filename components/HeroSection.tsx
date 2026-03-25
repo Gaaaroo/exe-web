@@ -87,7 +87,6 @@ const HeroSection = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.45, duration: 0.5 }}
           className=' mb-10 pl-180'
-          style={{ fontFamily: "'Cormorant Garamond', serif" }}
         >
           <Image
             src='/typo02.png'

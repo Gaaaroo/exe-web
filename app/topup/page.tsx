@@ -63,10 +63,10 @@ export default function TopUpPage() {
             transition={{ duration: 0.6 }}
             className='mb-8'
           >
-            <h1 className='text-4xl sm:text-5xl font-light text-green-400 uppercase tracking-widest leading-tight'>
+            <h1 className='text-4xl sm:text-5xl font-heading text-green-400 uppercase tracking-widest leading-tight'>
               KÝ ỨC DI SẢN
             </h1>
-            <p className='text-green-400 font-light tracking-[0.3em] text-sm uppercase mt-1'>
+            <p className='font-body text-xs tracking-[0.3em] text-gold/70 uppercase mt-1'>
               TOP - UP CENTER
             </p>
           </motion.div>
@@ -89,7 +89,7 @@ export default function TopUpPage() {
           </motion.div>
 
           {/* Account notice */}
-          <p className='text-white/50 text-sm mb-8'>
+          <p className='font-body text-white/50 text-sm mb-8'>
             No character under current account, please switch to another
             account.
           </p>
@@ -102,10 +102,10 @@ export default function TopUpPage() {
             transition={{ duration: 0.5 }}
             className='mb-8'
           >
-            <h2 className='text-green-400 font-light text-xl mb-1'>
+            <h2 className='font-heading text-xl text-green-400 mb-1'>
               Exclusive Top-Up Center Discount
             </h2>
-            <p className='text-white/50 text-sm'>
+            <p className='font-body text-white/50 text-sm'>
               Switch account to claim exclusive rewards
             </p>
           </motion.div>
@@ -118,7 +118,7 @@ export default function TopUpPage() {
             transition={{ duration: 0.5, delay: 0.05 }}
             className='mb-8'
           >
-            <h3 className='text-green-400 font-light text-base mb-3'>
+            <h3 className='font-body text-xs tracking-[0.3em] text-gold/70 uppercase mb-3'>
               Payment Method
             </h3>
             <div className='grid grid-cols-2 gap-3'>

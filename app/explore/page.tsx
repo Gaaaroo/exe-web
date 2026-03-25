@@ -86,9 +86,9 @@ export default function ExplorePage() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className='text-center text-green-400 tracking-[0.25em] text-2xl uppercase mb-8'
+          className='text-center font-heading text-3xl md:text-4xl text-green-400 mb-8'
         >
-          GAME VIDEO
+          Game Video
         </motion.h2>
 
         <div className='grid grid-cols-3 gap-4'>
@@ -159,9 +159,9 @@ export default function ExplorePage() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className='text-center text-green-400 tracking-[0.25em] text-2xl uppercase mb-12'
+          className='text-center font-heading text-3xl md:text-4xl text-green-400 mb-12'
         >
-          GAME SCREENSHOOT
+          Game Screenshot
         </motion.h2>
 
         <div className='relative max-w-300 mx-auto flex items-center gap-4'>

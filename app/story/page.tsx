@@ -81,7 +81,7 @@ export default function StoryPage() {
 
       <main className='flex-1 flex flex-col p-20 md:px-16 relative z-10 min-h-0 max-w-300 mx-auto w-full'>
         <motion.h1
-          className='text-green-400 font-light text-4xl mt-6 mb-2'
+          className='font-heading text-3xl md:text-4xl text-green-400 mt-6 mb-2'
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
@@ -125,8 +125,7 @@ export default function StoryPage() {
       {/* Bottom CTA strip */}
       <div className='relative z-10 bg-white flex items-center justify-between px-8 md:px-16 py-8 shrink-0'>
         <h2
-          className='text-[#0a3d3a] font-black text-3xl md:text-4xl tracking-widest uppercase'
-          style={{ fontFamily: 'var(--font-heading)' }}
+          className='font-heading text-[#0a3d3a] font-black text-3xl md:text-4xl tracking-widest uppercase'
         >
           KÝ ỨC DI SẢN
         </h2>

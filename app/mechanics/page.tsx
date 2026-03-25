@@ -196,10 +196,10 @@ export default function MechanicsPage() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.7, ease: 'easeOut', delay: 0.1 }}
               >
-                <h2 className='text-5xl text-green-400 mb-6 leading-tight'>
+                <h2 className='font-heading text-5xl text-green-400 mb-6 leading-tight'>
                   {current.title}
                 </h2>
-                <p className='text-white/80 text-base leading-relaxed text-justify'>
+                <p className='font-body text-white/80 text-base leading-relaxed text-justify'>
                   {current.description}
                 </p>
               </motion.div>
@@ -211,8 +211,7 @@ export default function MechanicsPage() {
       {/* Bottom CTA strip */}
       <div className='relative z-10 bg-white flex items-center justify-between px-8 md:px-16 py-8'>
         <h2
-          className='text-[#0a3d3a] font-black text-3xl md:text-4xl tracking-widest uppercase'
-          style={{ fontFamily: 'var(--font-heading)' }}
+          className='font-heading text-[#0a3d3a] font-black text-3xl md:text-4xl tracking-widest uppercase'
         >
           KÝ ỨC DI SẢN
         </h2>

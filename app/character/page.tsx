@@ -82,11 +82,11 @@ export default function CharacterPage() {
             transition={{ duration: 0.7, ease: 'easeOut' }}
             className='w-full pointer-events-auto'
           >
-            <h1 className='text-green-400 text-4xl font-light mb-5'>
+            <h1 className='font-light text-green-400 text-4xl mb-5'>
               Người thừa kế Di Sản
             </h1>
 
-            <div className='text-white/70 text-sm leading-relaxed space-y-3 mb-8 font-light text-justify'>
+            <div className='font-body text-white/70 text-sm leading-relaxed space-y-3 mb-8 font-light text-justify'>
               <p>
                 Bạn vào vai một người trẻ yêu văn hóa, bắt đầu hành trình du
                 hành qua các vùng miền để tìm lại những giá trị đang dần lùi xa
@@ -215,7 +215,7 @@ export default function CharacterPage() {
             <motion.button
               type='button'
               whileHover={{ scale: 1.03 }}
-              className='flex items-center gap-3 bg-green-400 hover:bg-green-400 text-black text-white text-2xl pl-7 pr-2 py-2 mr-11 rounded-full transition-colors duration-200 cursor-pointer min-w-[160px] justify-between'
+              className='flex items-center gap-3 bg-green-400 hover:bg-green-400 text-white text-2xl pl-7 pr-2 py-2 mr-11 rounded-full transition-colors duration-200 cursor-pointer min-w-[160px] justify-between'
             >
               More
               <span className='w-8 h-8 rounded-full bg-[#1a4a3a] shrink-0' />
@@ -226,10 +226,7 @@ export default function CharacterPage() {
 
       {/* Bottom CTA strip */}
       <div className='bg-white flex items-center justify-between px-8 md:px-16 py-8'>
-        <h2
-          className='text-[#0a3d3a] font-black text-3xl md:text-4xl tracking-widest uppercase'
-          style={{ fontFamily: 'var(--font-heading)' }}
-        >
+        <h2 className='font-heading text-[#0a3d3a] font-black text-3xl md:text-4xl tracking-widest uppercase'>
           KÝ ỨC DI SẢN
         </h2>
         <a
