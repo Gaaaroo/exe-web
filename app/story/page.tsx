@@ -33,7 +33,14 @@ export default function StoryPage() {
 
   return (
     <div className='h-screen text-white flex flex-col overflow-hidden'>
-      <video autoPlay loop muted playsInline className='fixed inset-0 w-full h-full object-cover -z-10' src='/bg-ani.mp4' />
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className='fixed inset-0 w-full h-full object-cover -z-10'
+        src='/bg-ani.mp4'
+      />
       <Navigation />
 
       {/* Starfield */}
@@ -74,7 +81,7 @@ export default function StoryPage() {
 
       <main className='flex-1 flex flex-col p-20 md:px-16 relative z-10 min-h-0 max-w-300 mx-auto w-full'>
         <motion.h1
-          className='text-green-400 font-black text-2xl md:text-5xl mt-6 mb-2 tracking-wide shrink-0'
+          className='text-green-400 font-light text-4xl mt-6 mb-2'
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: 'easeOut' }}

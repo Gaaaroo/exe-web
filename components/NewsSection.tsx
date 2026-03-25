@@ -85,14 +85,14 @@ export default function NewsSection() {
       id='news'
       className='py-16 px-4'
     >
-      <div className='max-w-[900px] mx-auto'>
+      <div className='max-w-300 mx-auto'>
         {/* Feature cards */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.7 }}
-          className='grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12'
+          className='grid grid-cols-1 sm:grid-cols-3 gap-5 mb-12'
         >
           {featureCards.map((card, i) => (
             <motion.div
@@ -103,7 +103,7 @@ export default function NewsSection() {
               transition={{ delay: i * 0.1, duration: 0.5 }}
               className='relative rounded-lg overflow-hidden border border-white/10 hover:border-green-400/40 transition-colors duration-300 cursor-pointer group'
             >
-              <div className='relative h-45 w-full'>
+              <div className='relative h-63 w-full'>
                 <Image
                   src={card.img}
                   alt={card.title}
@@ -112,8 +112,8 @@ export default function NewsSection() {
                 />
                 <div />
               </div>
-              <div className='p-4 pb-25 bg-[#0b1528]'>
-                <p className='text-white font-semibold text-base'>
+              <div className='p-4 pb-45 backdrop-brightness-70'>
+                <p className='text-white text-2xl font-light ỉtem-center justify-center flex'>
                   {card.title}
                 </p>
               </div>
@@ -128,20 +128,32 @@ export default function NewsSection() {
               key={tab}
               className='flex items-center gap-2'
             >
-              {i > 0 && <span className='text-white/30 text-sm'>+</span>}
+              {i > 0 && (
+                <Image
+                  src='/star01.png'
+                  alt='Dot'
+                  width={18}
+                  height={18}
+                />
+              )}
               <button
                 type='button'
                 onClick={() => setActiveTab(tab)}
-                className={`text-sm font-medium px-1 pb-1 transition-colors duration-200 cursor-pointer ${
+                className={`text-sm font-light px-1 pb-1 transition-colors duration-200 cursor-pointer ${
                   activeTab === tab
                     ? 'text-green-400 border-b-2 border-green-400'
-                    : 'text-white/60 hover:text-white/90'
+                    : 'text-white/50 hover:text-white/90'
                 }`}
               >
                 {tab}
               </button>
               {i === tabs.length - 1 && (
-                <span className='text-white/30 text-sm'>+</span>
+                <Image
+                  src='/star01.png'
+                  alt='Dot'
+                  width={18}
+                  height={18}
+                />
               )}
             </div>
           ))}
@@ -187,10 +199,10 @@ export default function NewsSection() {
                     </span>
                   </div>
                 </div>
-                <p className='text-green-400 text-2xl mb-1 truncate'>
+                <p className='text-green-400 text-2xl mb-1 truncate font-light'>
                   {item.title}
                 </p>
-                <p className='text-white/50 text-xs leading-relaxed line-clamp-2'>
+                <p className='text-white text-sm leading-relaxed line-clamp-2'>
                   {item.desc}
                 </p>
               </div>

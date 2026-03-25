@@ -85,7 +85,7 @@ const Navigation = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/30 backdrop-blur-xs ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-30 backdrop-brightness-40 ${
         visible ? 'translate-y-0' : '-translate-y-full'
       }`}
     >
@@ -97,7 +97,7 @@ const Navigation = () => {
         >
           <Image
             src='/typo.png'
-            alt='Ký Ức Đồ Gần'
+            alt='Ky uc di san'
             width={80}
             height={36}
             className='h-9 w-auto object-contain'
@@ -117,10 +117,10 @@ const Navigation = () => {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm font-medium transition-colors duration-200 whitespace-nowrap pb-0.5 ${
+                className={`text-md font-medium transition-colors duration-200 whitespace-nowrap pb-0.5 ${
                   isActive
                     ? 'text-white border-b-2 border-green-400'
-                    : 'text-white/80 hover:text-white'
+                    : 'text-white/50 hover:text-white'
                 }`}
               >
                 {link.label}
@@ -189,7 +189,7 @@ const Navigation = () => {
                 href={`/login?next=${encodeURIComponent('/')}`}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                className='text-white/80 hover:text-white text-sm font-medium transition-colors'
+                className='text-white/80 hover:text-white text-md font-medium transition-colors'
               >
                 Login
               </motion.a>
