@@ -7,31 +7,53 @@ import Navigation from '@/components/Navigation';
 import GameFooter from '@/components/GameFooter';
 
 const videoThumbnails = [
-  { src: '/phongcanh.png', alt: 'Game Video 1' },
-  { src: '/phongcanh2.png', alt: 'Game Video 2' },
-  { src: '/phongcanh3.png', alt: 'Game Video 3' },
+  {
+    src: '/thumbnail1.png',
+    video: '/video1.mp4',
+    alt: 'Game Video 1',
+  },
+  {
+    src: '/phongcanh2.png',
+    // video:
+    alt: 'Game Video 2',
+  },
+  {
+    src: '/phongcanh3.png',
+    // video:
+    alt: 'Game Video 3',
+  },
 ];
 
 const screenshots = [
-  { src: '/phongcanh.png', alt: 'Screenshot 1' },
-  { src: '/phongcanh2.png', alt: 'Screenshot 2' },
-  { src: '/phongcanh3.png', alt: 'Screenshot 3' },
+  { src: '/trenghe1.png', alt: 'Screenshot 1' },
+  { src: '/trenghe2.png', alt: 'Screenshot 2' },
+  { src: '/trenghe3.png', alt: 'Screenshot 3' },
+  { src: '/trenghe4.png', alt: 'Screenshot 4' },
+  { src: '/trenghe6.png', alt: 'Screenshot 5' },
+  { src: '/trencau4.png', alt: 'Screenshot 6' },
+  { src: '/trencau6.png', alt: 'Screenshot 7' },
+  { src: '/trencau6.1.png', alt: 'Screenshot 8' },
+  { src: '/trenthuyen.png', alt: 'Screenshot 9' },
+  { src: '/nocnha2.png', alt: 'Screenshot 10' },
+  { src: '/nocnha3.png', alt: 'Screenshot 11' },
 ];
 
 export default function ExplorePage() {
   const [activeIdx, setActiveIdx] = useState(0);
+  const [openVideo, setOpenVideo] = useState<string | null>(null);
 
   const prev = () =>
     setActiveIdx((i) => (i - 1 + screenshots.length) % screenshots.length);
   const next = () => setActiveIdx((i) => (i + 1) % screenshots.length);
 
   useEffect(() => {
-    const timer = setInterval(next, 10000);
+    const timer = setInterval(next, 20000);
     return () => clearInterval(timer);
   }, []);
 
   return (
     <div className='min-h-screen flex flex-col'>
+      {/* Background video */}
       <video
         autoPlay
         loop
@@ -40,6 +62,7 @@ export default function ExplorePage() {
         className='fixed inset-0 w-full h-full object-cover -z-10'
         src='/bg-ani.mp4'
       />
+
       <Navigation />
 
       {/* Hero */}
@@ -70,7 +93,7 @@ export default function ExplorePage() {
         >
           <Image
             src='/typo.png'
-            alt='Ký Ức Đồ Gần'
+            alt='Ky uc di san'
             width={900}
             height={280}
             priority
@@ -99,7 +122,11 @@ export default function ExplorePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className='relative aspect-video rounded-lg overflow-hidden border border-white/10 group cursor-pointer'
+              onClick={() => {
+                if (v.video) setOpenVideo(v.video);
+              }}
+              className={`relative aspect-video rounded-lg overflow-hidden border border-white/10 group
+                ${v.video ? 'cursor-pointer' : 'opacity-50 cursor-not-allowed'}`}
             >
               <Image
                 src={v.src}
@@ -208,21 +235,45 @@ export default function ExplorePage() {
           </button>
         </div>
 
-        {/* Dots */}
         <div className='flex justify-center gap-2 mt-6'>
           {screenshots.map((_, i) => (
             <button
               key={i}
-              type='button'
               onClick={() => setActiveIdx(i)}
-              className={`w-2 h-2 rounded-full transition-all duration-200 cursor-pointer ${
+              className={`w-2 h-2 rounded-full transition-all duration-200 ${
                 i === activeIdx ? 'bg-green-400 w-6' : 'bg-white/30'
               }`}
-              aria-label={`Screenshot ${i + 1}`}
             />
           ))}
         </div>
       </section>
+
+      {/* VIDEO MODAL */}
+      {openVideo && (
+        <div
+          className='fixed inset-0 bg-black/80 flex items-center justify-center z-50'
+          onClick={() => setOpenVideo(null)}
+        >
+          <div
+            className='relative w-[90%] max-w-6xl'
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setOpenVideo(null)}
+              className='absolute -top-10 right-0 text-white text-2xl'
+            >
+              ✕
+            </button>
+
+            <video
+              src={openVideo}
+              controls
+              autoPlay
+              className='w-full rounded-lg'
+            />
+          </div>
+        </div>
+      )}
 
       <GameFooter />
     </div>
