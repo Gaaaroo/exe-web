@@ -170,7 +170,7 @@ const Navigation = () => {
                   <motion.div
                     initial={{ opacity: 0, y: -4 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className='absolute right-0 top-11 min-w-[160px] rounded-lg bg-[#0d1630] border border-white/10 shadow-xl py-1'
+                    className='absolute right-0 top-11 min-w-[160px] rounded-4xl bg-[#0d1630] border border-white/10 shadow-xl py-1'
                   >
                     <button
                       type='button'

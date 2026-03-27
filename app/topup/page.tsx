@@ -127,7 +127,7 @@ export default function TopUpPage() {
                   key={method}
                   type='button'
                   onClick={() => setActivePayment(method)}
-                  className={`py-3 px-4 rounded-md text-sm font-medium transition-all duration-200 cursor-pointer border text-left ${
+                  className={`py-3 px-4 rounded-4xl text-sm font-medium transition-all duration-200 cursor-pointer border text-left ${
                     activePayment === method
                       ? 'bg-[#1a3a1a] border-green-400/60 text-white'
                       : 'bg-[#0b1528]/60 border-white/15 text-white/70 hover:border-white/30'
