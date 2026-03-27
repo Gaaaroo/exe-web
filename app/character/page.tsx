@@ -194,7 +194,7 @@ export default function CharacterPage() {
             className='flex flex-col items-center gap-5 pointer-events-auto'
           >
             {/* Character portrait */}
-            <div className='w-24 h-24 md:w-28 md:h-28 rounded-lg overflow-hidden border border-white/20 bg-[#0b1528]'>
+            <div className='w-24 h-24 md:w-28 md:h-28 rounded-4xl overflow-hidden border border-white/20 bg-[#0b1528]'>
               <Image
                 src='/main-avt.png'
                 alt='Character'
@@ -205,7 +205,7 @@ export default function CharacterPage() {
             </div>
 
             {/* Coming Soon card */}
-            <div className='w-24 md:w-28 h-24 md:h-28 rounded-lg bg-[#1a4a3a] border border-green-900/50 flex items-center justify-center cursor-pointer hover:bg-[#1f5544] transition-colors'>
+            <div className='w-24 md:w-28 h-24 md:h-28 rounded-4xl bg-[#1a4a3a] border border-green-900/50 flex items-center justify-center cursor-pointer hover:bg-[#1f5544] transition-colors'>
               <span className='text-white/80 text-xs text-center px-2'>
                 ComingSoon
               </span>
@@ -231,7 +231,7 @@ export default function CharacterPage() {
         </h2>
         <a
           href='#'
-          className='bg-green-400 hover:bg-green-300 text-black font-bold px-10 py-3.5 rounded-lg text-sm tracking-widest transition-colors duration-200 whitespace-nowrap'
+          className='bg-green-400 hover:bg-green-300 text-black font-bold px-10 py-3.5 rounded-4xl text-sm tracking-widest transition-colors duration-200 whitespace-nowrap'
         >
           DOWNLOAD
         </a>

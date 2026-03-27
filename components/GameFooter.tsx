@@ -111,11 +111,11 @@ const GameFooter = () => {
                 placeholder='Email'
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className='flex-1 bg-white border border-white/20 rounded-md px-4 py-2.5 text-gray-700 placeholder:text-gray-500 text-sm focus:outline-none focus:border-green-400/60 transition-colors'
+                className='flex-1 bg-white border border-white/20 rounded-4xl px-4 py-2.5 text-gray-700 placeholder:text-gray-500 text-sm focus:outline-none focus:border-green-400/60 transition-colors'
               />
               <button
                 type='button'
-                className='bg-green-400 hover:bg-green-300 text-black font-bold px-5 py-2.5 rounded-md text-sm transition-colors duration-200 whitespace-nowrap cursor-pointer'
+                className='bg-green-400 hover:bg-green-300 text-black font-bold px-5 py-2.5 rounded-4xl text-sm transition-colors duration-200 whitespace-nowrap cursor-pointer'
               >
                 Subcribe Now
               </button>

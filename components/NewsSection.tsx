@@ -101,7 +101,7 @@ export default function NewsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.5 }}
-              className='relative rounded-lg overflow-hidden border border-white/10 hover:border-green-400/40 transition-colors duration-300 cursor-pointer group'
+              className='relative rounded-4xl overflow-hidden border border-white/10 hover:border-2 hover:border-green-400/40 transition-colors duration-300 cursor-pointer group'
             >
               <div className='relative h-63 w-full'>
                 <Image
@@ -167,10 +167,10 @@ export default function NewsSection() {
               initial={{ opacity: 0, x: -10 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: i * 0.05, duration: 0.3 }}
-              className='flex gap-6 bg-[#0b1528]/60 border border-white/8 rounded-lg p-3 hover:border-white/20 transition-colors duration-200 cursor-pointer'
+              className='flex gap-6 bg-[#0b1528]/60 border border-white/8 rounded-4xl p-3 hover:border-2 hover:border-green-400/40 transition-colors duration-200 cursor-pointer'
             >
               {/* Thumbnail */}
-              <div className='relative w-50 h-30 shrink-0 rounded-md overflow-hidden'>
+              <div className='relative w-50 h-30 shrink-0 rounded-4xl overflow-hidden'>
                 <Image
                   src={item.img}
                   alt={item.title}
@@ -212,7 +212,7 @@ export default function NewsSection() {
 
         <button
           type='button'
-          className='w-full bg-green-400 hover:bg-green-300 text-black font-bold py-3.5 rounded-md text-sm tracking-widest transition-colors duration-200 cursor-pointer'
+          className='rounded-4xl w-full bg-green-400 hover:bg-green-300 text-black font-bold py-3.5 text-sm tracking-widest transition-colors duration-200 cursor-pointer'
         >
           XEM THÊM
         </button>

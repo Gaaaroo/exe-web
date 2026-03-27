@@ -125,7 +125,7 @@ export default function ExplorePage() {
               onClick={() => {
                 if (v.video) setOpenVideo(v.video);
               }}
-              className={`relative aspect-video rounded-lg overflow-hidden border border-white/10 group
+              className={`relative aspect-video rounded-4xl overflow-hidden border border-white/10 group
                 ${v.video ? 'cursor-pointer' : 'opacity-50 cursor-not-allowed'}`}
             >
               <Image
@@ -269,7 +269,7 @@ export default function ExplorePage() {
               src={openVideo}
               controls
               autoPlay
-              className='w-full rounded-lg'
+              className='w-full rounded-4xl'
             />
           </div>
         </div>

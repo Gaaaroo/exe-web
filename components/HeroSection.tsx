@@ -106,7 +106,7 @@ const HeroSection = () => {
         >
           <a
             href='#'
-            className='flex items-center gap-3 bg-black border border-white/30 hover:border-white/60 text-white px-6 py-3 rounded-xl transition-all duration-200 hover:bg-black/80'
+            className='flex items-center gap-3 bg-black border border-white/30 hover:border-white/60 text-white px-6 py-3 rounded-4xl transition-all duration-200 hover:bg-black/80'
           >
             <svg
               className='h-10 shrink-0'
@@ -125,7 +125,7 @@ const HeroSection = () => {
 
           <a
             href='#'
-            className='flex items-center gap-3 bg-black border border-white/30 hover:border-white/60 text-white px-6 py-3 rounded-xl transition-all duration-200 hover:bg-black/80'
+            className='flex items-center gap-3 bg-black border border-white/30 hover:border-white/60 text-white px-6 py-3 transition-all duration-200 hover:bg-black/80 rounded-4xl'
           >
             <Image
               src='/option02.png'

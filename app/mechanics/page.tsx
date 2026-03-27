@@ -185,7 +185,7 @@ export default function MechanicsPage() {
                   alt='Test Image'
                   width={500}
                   height={400}
-                  className='object-cover rounded-md'
+                  className='object-cover rounded-4xl'
                 />
               </motion.div>
 
@@ -210,14 +210,12 @@ export default function MechanicsPage() {
 
       {/* Bottom CTA strip */}
       <div className='relative z-10 bg-white flex items-center justify-between px-8 md:px-16 py-8'>
-        <h2
-          className='font-heading text-[#0a3d3a] font-black text-3xl md:text-4xl tracking-widest uppercase'
-        >
+        <h2 className='font-heading text-[#0a3d3a] font-black text-3xl md:text-4xl tracking-widest uppercase'>
           KÝ ỨC DI SẢN
         </h2>
         <a
           href='#'
-          className='bg-green-400 hover:bg-green-300 text-black font-bold px-10 py-3.5 rounded-lg text-sm tracking-widest transition-colors duration-200 whitespace-nowrap'
+          className='bg-green-400 hover:bg-green-300 text-black font-bold px-10 py-3.5 rounded-4xl text-sm tracking-widest transition-colors duration-200 whitespace-nowrap'
         >
           DOWNLOAD
         </a>
