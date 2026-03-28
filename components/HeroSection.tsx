@@ -26,7 +26,7 @@ const HeroSection = () => {
     <section
       id='hero'
       ref={containerRef}
-      className='relative h-screen flex flex-col items-center justify-start pt-8 overflow-hidden'
+      className='relative h-screen flex flex-col items-center justify-start pt-16 overflow-hidden'
     >
       {/* Background */}
       <motion.div
@@ -68,7 +68,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.3, duration: 0.4, ease: 'easeOut' }}
-          className='w-20  h-20 rounded-full bg-white/30 backdrop-blur-md border border-white/50 flex items-center justify-center hover:scale-110 transition-all duration-200 mb-15 -mt-15'
+          className='w-20  h-20 rounded-full bg-white/30 backdrop-blur-md border border-white/50 flex items-center justify-center hover:scale-110 transition-all duration-200 mb-15 mt-5'
           aria-label='Play trailer'
         >
           <svg
