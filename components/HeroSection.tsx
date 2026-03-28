@@ -26,7 +26,7 @@ const HeroSection = () => {
     <section
       id='hero'
       ref={containerRef}
-      className='relative h-screen flex flex-col items-center justify-center overflow-hidden'
+      className='relative h-screen flex flex-col items-center justify-start pt-8 overflow-hidden'
     >
       {/* Background */}
       <motion.div
@@ -45,13 +45,12 @@ const HeroSection = () => {
       />
 
       {/* Content */}
-      <div className='relative z-10 flex flex-col items-center text-center px-6'>
+      <div className='relative z-10 flex flex-col items-center text-center'>
         {/* Game title */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1, duration: 0.5, ease: 'easeOut' }}
-          className='mb-6'
         >
           <Image
             src='/typo.png'
@@ -59,7 +58,7 @@ const HeroSection = () => {
             width={900}
             height={280}
             priority
-            className='h-auto w-70 sm:w-100 md:w-140 lg:w-175 xl:w-200'
+            className='max-w-155 h-auto'
           />
         </motion.div>
 
@@ -69,7 +68,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.3, duration: 0.4, ease: 'easeOut' }}
-          className='w-20 h-20 rounded-full bg-white/20 backdrop-blur-sm border-2 border-white/60 flex items-center justify-center hover:bg-white/30 hover:scale-110 transition-all duration-300 cursor-pointer mb-8'
+          className='w-20  h-20 rounded-full bg-white/30 backdrop-blur-md border border-white/50 flex items-center justify-center hover:scale-110 transition-all duration-200 mb-15 -mt-15'
           aria-label='Play trailer'
         >
           <svg
@@ -80,22 +79,6 @@ const HeroSection = () => {
             <path d='M8 5v14l11-7z' />
           </svg>
         </motion.button>
-
-        {/* Heritage Echoes */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.45, duration: 0.5 }}
-          className=' mb-10 pl-180'
-        >
-          <Image
-            src='/typo02.png'
-            alt='Heritage Echoes'
-            width={300}
-            height={60}
-            className='h-auto w-40 sm:w-48 md:w-60 lg:w-72 mx-auto'
-          />
-        </motion.p>
 
         {/* App store buttons */}
         <motion.div
@@ -143,6 +126,22 @@ const HeroSection = () => {
           </a>
         </motion.div>
       </div>
+
+      {/* Heritage Echoes */}
+      <motion.p
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.45, duration: 0.5 }}
+        className='absolute bottom-6 right-10 z-10'
+      >
+        <Image
+          src='/typo02.png'
+          alt='Heritage Echoes'
+          width={300}
+          height={60}
+          className='h-auto w-40 sm:w-48 md:w-60 lg:w-72 mx-auto opacity-80'
+        />
+      </motion.p>
     </section>
   );
 };
